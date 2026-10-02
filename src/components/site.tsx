@@ -2,7 +2,8 @@ import { Link } from '@tanstack/react-router';
 import { ArrowRight, ChevronDown, Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { useState, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
-import logo from '@/assets/logo.png.asset.json';
+   import logoImg from '@/assets/logo.png';
+   const logo = { url: logoImg };
 import { courses, phone, whatsapp } from '@/lib/site-data';
 
 const nav = [{ to: '/', label: 'Home' }, { to: '/study-abroad', label: 'Study Abroad' }, { to: '/results', label: 'Results' }, { to: '/gallery', label: 'Gallery' }, { to: '/about', label: 'About' }, { to: '/contact', label: 'Contact' }] as const;
@@ -12,7 +13,7 @@ export function Action({ children, href, subtle = false, className = '' }: { chi
 export function PageHead({ title, description }: { title: string; description: string }) {
   return <></>;
 }
-export const makeHead = (title: string, description: string) => ({ meta: [{ title: `${title} | The Howard's Council` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} | The Howard's Council` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] });
+export const makeHead = (title: string, description: string) => ({ meta: [{ title: `${title} | The Howard's Council` }, { name: 'description', content: description },{ name: 'robots', content: 'noindex' }, { property: 'og:title', content: `${title} | The Howard's Council` }, { property: 'og:description', content: description }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] });
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
