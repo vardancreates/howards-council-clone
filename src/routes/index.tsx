@@ -231,6 +231,7 @@ function Counter({ to, decimals = 0, suffix = "" }: { to: number; decimals?: num
   useEffect(() => {
     const el = ref.current; if (!el) return;
     const io = new IntersectionObserver(([e]) => {
+      if (!e) return;
       if (!e.isIntersecting) return;
       io.disconnect();
       const start = performance.now();
@@ -261,8 +262,8 @@ function Results() {
         ))}
       </div>
       <div className="mt-16 rounded-3xl border border-ink-foreground/15 p-8 sm:p-12">
-        <blockquote className="font-display text-2xl font-bold sm:text-3xl">"{TESTIMONIALS[t].q}"</blockquote>
-        <p className="mt-6 font-bold">{TESTIMONIALS[t].n} <span className="font-normal text-ink-foreground/60">· {TESTIMONIALS[t].r}</span></p>
+        <blockquote className="font-display text-2xl font-bold sm:text-3xl">"{TESTIMONIALS[t]!.q}"</blockquote>
+        <p className="mt-6 font-bold">{TESTIMONIALS[t]!.n} <span className="font-normal text-ink-foreground/60">· {TESTIMONIALS[t]!.r}</span></p>
         <div className="mt-8 flex items-center gap-3">
           <Btn variant="light" onClick={() => setT((t + TESTIMONIALS.length - 1) % TESTIMONIALS.length)}>←<span className="sr-only">Previous</span></Btn>
           <Btn variant="light" onClick={() => setT((t + 1) % TESTIMONIALS.length)}>→<span className="sr-only">Next</span></Btn>
@@ -301,10 +302,10 @@ function LevelTest() {
         {!done ? (
           <div key={step} className="animate-fade-in">
             <p className="text-sm font-bold text-muted-foreground">Question {step + 1} of 5</p>
-            <h3 className="mt-2 text-2xl font-extrabold sm:text-3xl">{QUIZ[step].q}</h3>
+            <h3 className="mt-2 text-2xl font-extrabold sm:text-3xl">{QUIZ[step]!.q}</h3>
             <div className="mt-6 grid gap-3">
-              {QUIZ[step].o.map((o, i) => (
-                <button key={o} onClick={() => { if (i === QUIZ[step].a) setScore((s) => s + 1); setStep((s) => s + 1); }} className="min-h-12 rounded-2xl border-2 px-5 py-3 text-left font-medium transition-colors hover:border-secondary hover:bg-accent active:scale-[0.99]">{o}</button>
+              {QUIZ[step]!.o.map((o, i) => (
+                <button key={o} onClick={() => { if (i === QUIZ[step]!.a) setScore((s) => s + 1); setStep((s) => s + 1); }} className="min-h-12 rounded-2xl border-2 px-5 py-3 text-left font-medium transition-colors hover:border-secondary hover:bg-accent active:scale-[0.99]">{o}</button>
               ))}
             </div>
           </div>
