@@ -1,24 +1,9 @@
-# Pixel Perfect Pixels
+# The Howard's Council
 
-Implement exactly the screenshot and nothing else
+Website for The Howard's Council, a language training and study abroad institute in Meerut.
 
-This project was built with [Lovable](https://lovable.dev).
+Built by Veb Studio.
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/25ec942f-dac7-44be-92e8-a136c75624c5).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+## Run locally
+npm install
 npm run dev
-```
