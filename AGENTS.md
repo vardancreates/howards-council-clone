@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep shared navigation, footer and contact actions in `src/components/site.tsx` so every content route stays consistent.
+- Keep course copy and stock-photo references in `src/lib/site-data.ts` so nine course routes share one template and photos can be replaced centrally.

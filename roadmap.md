@@ -1,0 +1,4 @@
+- [x] Split the single page into a shared site shell and individual content pages.
+- [x] Add a reusable course data model and nine course pages.
+- [x] Prepare stock photography for home and inner pages.
+- [ ] Verify navigation, gallery interactions, mobile layout, and page metadata.
