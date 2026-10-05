@@ -1,88 +1,116 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { SiteLayout, SectionIntro, Action, makeHead } from "@/components/site";
+
+import { SiteLayout, SectionIntro, Photo, Action, makeHead } from "@/components/site";
+
 import { whatsapp } from "@/lib/site-data";
+
+import result1 from "@/assets/results/result-1.jpg";
+import result2 from "@/assets/results/result-2.jpg";
+import result3 from "@/assets/results/result-3.jpg";
+import result4 from "@/assets/results/result-4.jpg";
+import result5 from "@/assets/results/result-5.jpg";
+import result6 from "@/assets/results/result-6.jpg";
+import result7 from "@/assets/results/result-7.jpg";
+import result8 from "@/assets/results/result-8.jpg";
+import result9 from "@/assets/results/result-9.jpg";
+import result10 from "@/assets/results/result-10.jpg";
 
 export const Route = createFileRoute("/results")({
   head: () =>
-    makeHead("Results", "Student results and testimonials from The Howard's Council, Meerut."),
+    makeHead(
+      "Results",
+      "Explore student results and achievements from The Howards Council, Meerut.",
+    ),
   component: ResultsPage,
 });
 
-const STATS = [
-  ["23", "Years of experience"],
-  ["4.6★", "Google rating"],
-  ["388", "Google reviews"],
-];
-
-type Item = { quote: string; name: string; detail: string };
-// Replace with real testimonials when the owner sends them.
-const SAMPLE = (who: string): Item[] =>
-  [1, 2, 3].map((i) => ({
-    quote: "Sample testimonial. Replace with a real quote.",
-    name: `${who} name ${i}`,
-    detail: "Course · Result",
-  }));
-const DATA: Record<string, Item[]> = { Students: SAMPLE("Student"), Parents: SAMPLE("Parent") };
+const RESULTS = [
+  [result1, "Student result"],
+  [result2, "Student result"],
+  [result3, "IELTS score card"],
+  [result4, "Student achievement"],
+  [result5, "Course result"],
+  [result6, "IELTS score card"],
+  [result7, "Student result"],
+  [result8, "Student achievement"],
+  [result9, "Course result"],
+  [result10, "IELTS score card"],
+] as const;
 
 function ResultsPage() {
-  const [tab, setTab] = useState<keyof typeof DATA>("Students");
   return (
     <SiteLayout>
       <SectionIntro
         eyebrow="Results"
         title="Real students. Real scores."
-        description="What our students and their parents say about learning with us."
+        description="A look at the results and achievements of learners who have trained with The Howards Council."
       />
-      <section className="mx-auto grid max-w-7xl grid-cols-3 gap-6 px-5 pb-16 lg:px-8">
-        {STATS.map(([v, l]) => (
-          <div key={l} className="border-t-4 border-primary pt-4">
-            <p className="font-display text-4xl font-extrabold md:text-6xl">{v}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{l}</p>
+
+      {/* Key stats */}
+      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-5 pb-16 sm:grid-cols-3 lg:px-8">
+        {[
+          ["23", "Years of experience"],
+          ["4.6★", "Google rating"],
+          ["388", "Google reviews"],
+        ].map(([value, label]) => (
+          <div key={label} className="border-t-4 border-primary pt-4">
+            <p className="font-display text-4xl font-extrabold md:text-6xl">{value}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{label}</p>
           </div>
         ))}
       </section>
-      <section className="bg-muted px-5 py-16">
+
+      {/* Results gallery */}
+      <section className="bg-muted px-5 py-20">
         <div className="mx-auto max-w-7xl lg:px-8">
-          <div className="flex gap-2" role="tablist">
-            {Object.keys(DATA).map((t) => (
-              <button
-                key={t}
-                role="tab"
-                aria-selected={tab === t}
-                onClick={() => setTab(t)}
-                className={`min-h-11 rounded-sm px-5 font-bold ${tab === t ? "bg-ink text-ink-foreground" : "bg-card"}`}
-              >
-                {t}
-              </button>
-            ))}
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-widest text-coral-deep">
+              Student results
+            </p>
+
+            <h2 className="mt-2 font-display text-4xl font-extrabold md:text-5xl">
+              See the results for yourself.
+            </h2>
+
+            <p className="mt-4 text-lg text-muted-foreground">
+              Browse real result and score-card images from our learners.
+            </p>
           </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {DATA[tab]!.map((x) => (
-              <figure key={x.name} className="bg-card p-7">
-                <blockquote className="text-lg leading-relaxed">“{x.quote}”</blockquote>
-                <figcaption className="mt-5 text-sm">
-                  <b>{x.name}</b>
-                  <span className="text-muted-foreground"> · {x.detail}</span>
-                </figcaption>
-              </figure>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {RESULTS.map(([src, label]) => (
+              <div key={label} className="group overflow-hidden bg-card">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <Photo
+                    src={src}
+                    alt={label}
+                    className="transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+
+                <div className="border-b-4 border-primary p-5">
+                  <p className="text-xs font-bold uppercase tracking-widest text-coral-deep">
+                    Result
+                  </p>
+                  <h3 className="mt-1 font-display text-xl font-bold">{label}</h3>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
-      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <h2 className="font-display text-3xl font-extrabold md:text-4xl">Score cards</h2>
-        <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {[1, 2, 3, 4].map((i) => (
-            <div
-              key={i}
-              className="grid aspect-[3/4] place-items-center border-2 border-dashed text-sm text-muted-foreground"
-            >
-              Score card {i}
-            </div>
-          ))}
-        </div>
-        <div className="mt-10">
+
+      {/* CTA */}
+      <section className="px-5 py-20 text-center">
+        <h2 className="font-display text-4xl font-extrabold md:text-5xl">
+          Want to know what you can achieve?
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+          Talk to our team about your goals, course options and preparation.
+        </p>
+
+        <div className="mt-7">
           <Action href={whatsapp("Hi! I'd like to know more about your results.")}>
             Talk to us →
           </Action>

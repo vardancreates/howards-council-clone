@@ -1,6 +1,6 @@
-# The Howard's Council
+# The Howards Council
 
-Website for The Howard's Council, a language training and study abroad institute in Meerut.
+Website for The Howards Council, a language training and study abroad institute in Meerut.
 
 Built by Veb Studio.
 

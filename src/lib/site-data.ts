@@ -30,112 +30,118 @@ export const courses = [
     slug: "ielts",
     name: "IELTS",
     category: "Test preparation",
-    tagline: "Make every band count.",
+    tagline: "Prepare with purpose. Aim for your target band.",
     image: photos.study,
     overview:
-      "Build confidence in every part of the Academic or General Training test with structured practice and feedback.",
+      "Prepare for IELTS with focused practice across Listening, Reading, Writing and Speaking, supported by feedback, strategy and regular test practice.",
     audience:
-      "For students planning to study overseas and applicants preparing for work or migration.",
+      "For students and professionals preparing for study, work or migration through IELTS Academic or General Training.",
     covered: [
-      "Listening and reading strategies",
-      "Writing Task 1 and Task 2",
+      "Listening and Reading strategies",
+      "Academic & General Training Writing",
       "Speaking practice and feedback",
-      "Timed practice tests",
+      "Timed mock tests",
     ],
   },
   {
     slug: "pte",
     name: "PTE",
     category: "Test preparation",
-    tagline: "Get ready for the computer-based test.",
+    tagline: "Get confident with the computer-based test.",
     image: photos.lesson,
     overview:
-      "Targeted PTE Academic preparation with practice across speaking, writing, reading and listening.",
-    audience: "For students and applicants who prefer a computer-based English test.",
+      "Build the skills and test familiarity needed for PTE Academic through targeted practice in Speaking & Writing, Reading and Listening.",
+    audience:
+      "For students and applicants looking for a computer-based English proficiency test for study or other international goals.",
     covered: [
-      "Speaking fluency and pronunciation",
-      "Writing and summarising",
-      "Reading and listening tasks",
-      "Practice tests and feedback",
+      "Speaking & Writing task practice",
+      "Reading strategies",
+      "Listening & note-taking",
+      "Timed computer-based practice",
     ],
   },
   {
     slug: "toefl",
     name: "TOEFL",
     category: "Test preparation",
-    tagline: "Prepare for what comes next.",
+    tagline: "Build the academic English you need.",
     image: photos.campus,
     overview:
-      "Develop the academic English skills and test-day strategies needed for the TOEFL iBT.",
-    audience: "For students applying to universities that accept or prefer TOEFL.",
+      "Prepare for TOEFL iBT with focused practice in academic Reading, Listening, Writing and Speaking, along with strategies for the current test format.",
+    audience:
+      "For students preparing to demonstrate English proficiency for university and academic environments.",
     covered: [
-      "Academic reading",
-      "Listening and note-taking",
-      "Integrated writing tasks",
-      "Speaking practice and mocks",
+      "Academic Reading & Listening",
+      "Speaking practice",
+      "Academic Writing",
+      "Current-format mock practice",
     ],
   },
   {
     slug: "celpip",
     name: "CELPIP",
     category: "Test preparation",
-    tagline: "Feel ready for every section.",
+    tagline: "Prepare for English in real-world situations.",
     image: photos.hero,
     overview:
-      "Practical preparation for the CELPIP General test, with everyday English and exam-format practice.",
-    audience: "For applicants preparing for Canadian permanent residence or citizenship.",
+      "Build practical English skills for the CELPIP General test with focused preparation across Listening, Reading, Writing and Speaking.",
+    audience:
+      "For applicants preparing to demonstrate English proficiency for Canadian permanent residence, citizenship or other eligible purposes.",
     covered: [
-      "Listening and reading",
-      "Writing tasks",
-      "Speaking prompts",
-      "Practice tests and review",
+      "Listening & Reading strategies",
+      "Email and written-response practice",
+      "Speaking task practice",
+      "Full-length practice tests",
     ],
   },
   {
     slug: "spoken-english",
     name: "Spoken English",
     category: "Languages & skills",
-    tagline: "Find your voice in English.",
+    tagline: "Speak more clearly. Communicate with confidence.",
     image: photos.language,
     overview:
-      "Build everyday confidence through guided conversation, vocabulary and regular speaking practice.",
-    audience: "For learners who want to speak more naturally at work, in class or in daily life.",
+      "Build practical English for everyday conversations through guided speaking, listening, vocabulary and pronunciation practice.",
+    audience:
+      "For learners who want to communicate more naturally and confidently in daily life, education or work.",
     covered: [
-      "Conversation practice",
-      "Pronunciation and fluency",
-      "Useful everyday vocabulary",
-      "Listening and confidence",
+      "Everyday conversation",
+      "Pronunciation & fluency",
+      "Practical vocabulary",
+      "Listening & speaking confidence",
     ],
   },
   {
     slug: "business-english",
     name: "Business English",
     category: "Languages & skills",
-    tagline: "Speak with confidence at work.",
+    tagline: "Communicate with confidence at work.",
     image: photos.business,
     overview:
-      "Communicate clearly and professionally in workplace conversations and written communication.",
-    audience: "For professionals and job seekers who use English at work.",
+      "Develop the English needed for meetings, presentations, professional conversations, interviews and workplace writing.",
+    audience:
+      "For professionals, students and job seekers who want to communicate more effectively in professional settings.",
     covered: [
-      "Meetings and presentations",
-      "Email and workplace writing",
-      "Interview preparation",
-      "Professional conversation",
+      "Meetings & presentations",
+      "Professional emails & writing",
+      "Interviews & networking",
+      "Workplace communication",
     ],
   },
   {
     slug: "german",
     name: "German",
     category: "Languages & skills",
-    tagline: "Open a new world of conversation.",
+    tagline: "Start speaking German with confidence.",
     image: photos.galleryOne,
     overview:
-      "Start speaking, reading and understanding German with an approachable, structured learning path.",
-    audience: "For beginners and learners exploring study, travel or work opportunities.",
+      "Build a practical foundation in German through structured lessons covering pronunciation, vocabulary, grammar and everyday communication.",
+    audience:
+      "For beginners and learners preparing for study, work, travel or personal language goals.",
     covered: [
-      "Speaking and pronunciation",
-      "Vocabulary and grammar",
-      "Listening and reading",
+      "Pronunciation & speaking",
+      "Vocabulary & grammar",
+      "Reading & listening",
       "Everyday conversation",
     ],
   },
@@ -143,27 +149,30 @@ export const courses = [
     slug: "spanish",
     name: "Spanish",
     category: "Languages & skills",
-    tagline: "Say more in Spanish.",
+    tagline: "Learn Spanish for real conversations.",
     image: photos.galleryTwo,
-    overview: "Learn practical Spanish in supportive classes focused on real communication.",
-    audience: "For beginners and anyone interested in language, travel or personal growth.",
+    overview:
+      "Develop a practical foundation in Spanish through guided speaking, vocabulary, grammar, listening and everyday communication.",
+    audience:
+      "For beginners and learners interested in travel, study, work or learning a new language.",
     covered: [
-      "Pronunciation and conversation",
+      "Pronunciation & conversation",
       "Everyday vocabulary",
       "Grammar foundations",
-      "Listening and reading",
+      "Listening & reading",
     ],
   },
   {
     slug: "personality-development",
     name: "Personality Development",
     category: "Languages & skills",
-    tagline: "Show up as your best self.",
+    tagline: "Build confidence that shows.",
     image: photos.galleryThree,
     overview:
-      "Strengthen communication, confidence and the way you present yourself in everyday and professional settings.",
-    audience: "For students, job seekers and professionals looking to build confidence.",
-    covered: ["Public speaking", "Body language", "Interview confidence", "Communication skills"],
+      "Develop communication, presentation and interpersonal skills that help you express yourself with greater confidence in academic and professional situations.",
+    audience:
+      "For students, job seekers and professionals looking to strengthen communication and personal confidence.",
+    covered: ["Public speaking", "Body language", "Interview skills", "Communication confidence"],
   },
 ] as const;
 export const galleryPhotos = [
@@ -177,3 +186,7 @@ export const galleryPhotos = [
   photos.business,
   photos.campus,
 ];
+export const address = "618, Shiv Mandir Lane, Begum Bagh, Meerut, Uttar Pradesh 250001";
+const place = encodeURIComponent(`The Howards Council ${address}`);
+export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${place}`;
+export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place}`;
