@@ -1,15 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { SiteLayout, SectionIntro, makeHead } from '@/components/site';
-import { courses } from '@/lib/site-data';
+import { classroomPhotos } from '@/lib/site-data';
 
 export const Route = createFileRoute('/gallery')({
-  head: () => makeHead('Gallery', "Inside The Howards Council: classroom training and student life."),
+  head: () => makeHead('Gallery', "Inside The Howard's Council: classroom training and student life."),
   component: GalleryPage,
 });
 
-// Stock images for now. Replace with real classroom photos when the owner sends them.
-const PHOTOS = courses.map((c) => ({ src: c.image, alt: `${c.name} class` }));
+const PHOTOS = classroomPhotos;
 
 function GalleryPage() {
   const [i, setI] = useState<number | null>(null);
@@ -24,7 +23,7 @@ function GalleryPage() {
   }, [i]);
   return (
     <SiteLayout>
-      <SectionIntro eyebrow="Gallery" title="Inside The Howards." description="Classroom training, practice sessions and student life." />
+      <SectionIntro eyebrow="Gallery" title="Inside The Howard's." description="Classroom training, practice sessions and student life." />
       <section className="mx-auto max-w-7xl columns-1 gap-4 px-5 pb-20 sm:columns-2 lg:columns-3 lg:px-8">
         {PHOTOS.map((p, n) => (
           <button key={p.src + n} onClick={() => setI(n)} aria-label={`Open photo: ${p.alt}`} className="mb-4 block w-full break-inside-avoid overflow-hidden">

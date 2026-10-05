@@ -5,7 +5,7 @@ export const Route = createFileRoute("/courses/")({
   head: () =>
     makeHead(
       "English & Language Courses in Meerut",
-      "Explore IELTS, PTE, TOEFL, CELPIP, Spoken English, Business English, German, Spanish and Personality Development courses in Meerut.",
+      "Explore IELTS, PTE, TOEFL, CELPIP, Spoken English, Business English, German, Spanish, French and Personality Development courses in Meerut.",
     ),
   component: CoursesPage,
 });
@@ -28,7 +28,7 @@ function CoursesPage() {
             <div className="aspect-[4/3] overflow-hidden">
               <Photo
                 src={c.image}
-                alt={`${c.name} course at The Howards Council`}
+                alt={`${c.name} course at The Howard's Council`}
                 className="transition-transform duration-500 group-hover:scale-105"
               />
             </div>

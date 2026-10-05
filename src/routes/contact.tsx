@@ -24,9 +24,9 @@ function Page() {
   return (
     <SiteLayout>
       <SectionIntro
-        eyebrow="Contact The Howards Council"
+        eyebrow="Contact The Howard's Council"
         title="Let’s talk about your next step."
-        description="Visit The Howards Council in Begum Bagh, Meerut, call us, or send an enquiry to find the right course for your goals."
+        description="Visit The Howard's Council in Begum Bagh, Meerut, call us, or send an enquiry to find the right course for your goals."
       />
       <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-24 lg:grid-cols-2 lg:px-8">
         <div>
@@ -35,10 +35,10 @@ function Page() {
             target="_blank"
             rel="noreferrer"
             className="group block overflow-hidden rounded-md"
-            aria-label="Get directions to The Howards Council"
+            aria-label="Get directions to The Howard's Council"
           >
             <iframe
-              title="The Howards Council on Google Maps"
+              title="The Howard's Council on Google Maps"
               src="https://www.google.com/maps?q=The+Howard%27s+Council%2C+618%2C+Shiv+Mandir+Lane%2C+Begum+Bagh%2C+Meerut%2C+Uttar+Pradesh+250001&output=embed"
               className="pointer-events-none h-80 w-full border-0 transition-transform duration-500 group-hover:scale-[1.02]"
               loading="lazy"

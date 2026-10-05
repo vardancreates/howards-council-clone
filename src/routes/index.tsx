@@ -1,12 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { SiteLayout, Photo, Eyebrow, Action, makeHead } from "@/components/site";
-import { courses, whatsapp } from "@/lib/site-data";
-import classroom1 from "@/assets/classroom/classroom-1.jpg";
-import classroom2 from "@/assets/classroom/classroom-2.jpg";
-import classroom3 from "@/assets/classroom/classroom-3.jpg";
-import classroom4 from "@/assets/classroom/classroom-4.jpg";
-import mentorImage from "@/assets/mentor/mentor-saurabh-sharma.jpg";
+import { SiteLayout, Photo, MentorPhoto, Eyebrow, Action, makeHead } from "@/components/site";
+import { classroomPhotos, courses, whatsapp } from "@/lib/site-data";
 import result1 from "@/assets/results/result-1.jpg";
 import result2 from "@/assets/results/result-2.jpg";
 import result3 from "@/assets/results/result-3.jpg";
@@ -53,7 +48,7 @@ function Home() {
         <div>
           <Eyebrow>LANGUAGE TRAINING · MEERUT</Eyebrow>
           <h1 className="font-display text-6xl font-extrabold leading-[0.95] sm:text-7xl lg:text-8xl">
-            Let your <span className="text-primary">English</span> speak better.
+            Let you <span className="text-primary">speak</span> better.
           </h1>
           <p className="mt-6 max-w-lg text-lg text-muted-foreground">
             IELTS, PTE, TOEFL and CELPIP coaching, spoken English and foreign languages — built
@@ -107,7 +102,7 @@ function Home() {
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
           <div>
-            <Eyebrow>Welcome to The Howards Council</Eyebrow>
+            <Eyebrow>Welcome to The Howard's Council</Eyebrow>
 
             <h2 className="font-display text-4xl font-extrabold md:text-5xl">
               Language learning that moves with you.
@@ -171,7 +166,7 @@ function Home() {
             </div>
           </div>
           <div>
-            <Eyebrow>Why The Howards</Eyebrow>
+            <Eyebrow>Why The Howard's</Eyebrow>
             <h2 className="font-display text-4xl font-extrabold md:text-5xl">
               Learn with purpose. Grow with confidence.
             </h2>
@@ -237,7 +232,7 @@ function Home() {
           <div className="relative">
             <div className="absolute -bottom-3 -left-3 h-28 w-28 bg-primary" />
             <div className="relative aspect-[4/5] max-w-md overflow-hidden rounded-br-[5rem] rounded-tl-md">
-              <Photo src={mentorImage} alt="Saurabh Sharma, IELTS IDP Certified Trainer" />
+              <MentorPhoto />
             </div>
           </div>
 
@@ -275,7 +270,7 @@ function Home() {
             </h2>
 
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              A glimpse of the results achieved by learners at The Howards Council.
+              A glimpse of the results achieved by learners at The Howard's Council.
             </p>
           </div>
 
@@ -290,7 +285,7 @@ function Home() {
               <div className="aspect-[4/3] overflow-hidden">
                 <Photo
                   src={src}
-                  alt={`Student result ${index + 1}`}
+                  alt={`Student receiving a result at The Howard's Council, photo ${index + 1}`}
                   className="transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -314,7 +309,7 @@ function Home() {
         <div className="mt-10 divide-y divide-border border-y border-border">
           {[
             [
-              "Which courses does The Howards Council offer?",
+              "Which courses does The Howard's Council offer?",
               "We offer language training and preparation for IELTS, PTE, TOEFL and CELPIP, along with spoken English and foreign language learning.",
             ],
             [
@@ -326,8 +321,8 @@ function Home() {
               "Yes. You can contact our team to discuss your goals and understand which course or preparation path is suitable for you.",
             ],
             [
-              "Where is The Howards Council located?",
-              "The Howards Council is based in Meerut. Contact us for the latest centre and course information.",
+              "Where is The Howard's Council located?",
+              "The Howard's Council is based in Meerut. Contact us for the latest centre and course information.",
             ],
           ].map(([question, answer]) => (
             <details key={question} className="group py-5">
@@ -351,18 +346,11 @@ function Home() {
         <h2 className="font-display text-4xl font-extrabold md:text-5xl">Where it happens.</h2>
 
         <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
-          {(
-            [
-              [classroom1, "Students learning in the classroom"],
-              [classroom2, "Students practising English"],
-              [classroom3, "Interactive classroom learning"],
-              [classroom4, "The Howards Council classroom"],
-            ] as const
-          ).map(([src, alt]) => (
-            <Link key={alt} to="/gallery" className="group block aspect-[4/5] overflow-hidden">
+          {classroomPhotos.slice(0, 4).map((photo) => (
+            <Link key={photo.src} to="/gallery" className="group block aspect-[4/5] overflow-hidden">
               <Photo
-                src={src}
-                alt={alt}
+                src={photo.src}
+                alt={photo.alt}
                 className="transition-transform duration-500 group-hover:scale-105"
               />
             </Link>
@@ -415,7 +403,7 @@ function Home() {
         <h2 className="font-display text-4xl font-extrabold md:text-5xl">
           Ready to take the next step?
         </h2>
-        <p className="mt-3">Start your language learning journey with The Howards Council.</p>
+        <p className="mt-3">Start your language learning journey with The Howard's Council.</p>
         <a
           href={whatsapp("Hi! I'd like to book a free demo class.")}
           target="_blank"

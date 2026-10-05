@@ -14,7 +14,6 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ResultsRouteImport } from './routes/results'
-import { Route as StudyAbroadRouteImport } from './routes/study-abroad'
 import { Route as CoursesIndexRouteImport } from './routes/courses.index'
 import { Route as CoursesSlugRouteImport } from './routes/courses.$slug'
 
@@ -43,11 +42,6 @@ const ResultsRoute = ResultsRouteImport.update({
   path: '/results',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StudyAbroadRoute = StudyAbroadRouteImport.update({
-  id: '/study-abroad',
-  path: '/study-abroad',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CoursesIndexRoute = CoursesIndexRouteImport.update({
   id: '/courses/',
   path: '/courses/',
@@ -65,7 +59,6 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/results': typeof ResultsRoute
-  '/study-abroad': typeof StudyAbroadRoute
   '/courses/$slug': typeof CoursesSlugRoute
   '/courses/': typeof CoursesIndexRoute
 }
@@ -75,7 +68,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/results': typeof ResultsRoute
-  '/study-abroad': typeof StudyAbroadRoute
   '/courses/$slug': typeof CoursesSlugRoute
   '/courses': typeof CoursesIndexRoute
 }
@@ -86,7 +78,6 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/results': typeof ResultsRoute
-  '/study-abroad': typeof StudyAbroadRoute
   '/courses/$slug': typeof CoursesSlugRoute
   '/courses/': typeof CoursesIndexRoute
 }
@@ -98,7 +89,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/results'
-    | '/study-abroad'
     | '/courses/$slug'
     | '/courses/'
   fileRoutesByTo: FileRoutesByTo
@@ -108,7 +98,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/results'
-    | '/study-abroad'
     | '/courses/$slug'
     | '/courses'
   id:
@@ -118,7 +107,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/results'
-    | '/study-abroad'
     | '/courses/$slug'
     | '/courses/'
   fileRoutesById: FileRoutesById
@@ -129,7 +117,6 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
   ResultsRoute: typeof ResultsRoute
-  StudyAbroadRoute: typeof StudyAbroadRoute
   CoursesSlugRoute: typeof CoursesSlugRoute
   CoursesIndexRoute: typeof CoursesIndexRoute
 }
@@ -171,13 +158,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResultsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/study-abroad': {
-      id: '/study-abroad'
-      path: '/study-abroad'
-      fullPath: '/study-abroad'
-      preLoaderRoute: typeof StudyAbroadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/courses/': {
       id: '/courses/'
       path: '/courses'
@@ -201,7 +181,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
   ResultsRoute: ResultsRoute,
-  StudyAbroadRoute: StudyAbroadRoute,
   CoursesSlugRoute: CoursesSlugRoute,
   CoursesIndexRoute: CoursesIndexRoute,
 }

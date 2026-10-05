@@ -19,23 +19,23 @@ export const Route = createFileRoute("/results")({
   head: () =>
     makeHead(
       "Results",
-      "Explore student results and achievements from The Howards Council, Meerut.",
+      "Explore student results and achievements from The Howard's Council, Meerut.",
     ),
   component: ResultsPage,
 });
 
 const RESULTS = [
-  [result1, "Student result"],
-  [result2, "Student result"],
-  [result3, "IELTS score card"],
-  [result4, "Student achievement"],
-  [result5, "Course result"],
-  [result6, "IELTS score card"],
-  [result7, "Student result"],
-  [result8, "Student achievement"],
-  [result9, "Course result"],
-  [result10, "IELTS score card"],
-] as const;
+  result1,
+  result2,
+  result3,
+  result4,
+  result5,
+  result6,
+  result7,
+  result8,
+  result9,
+  result10,
+];
 
 function ResultsPage() {
   return (
@@ -43,7 +43,7 @@ function ResultsPage() {
       <SectionIntro
         eyebrow="Results"
         title="Real students. Real scores."
-        description="A look at the results and achievements of learners who have trained with The Howards Council."
+        description="A look at the results and achievements of learners who have trained with The Howard's Council."
       />
 
       {/* Key stats */}
@@ -78,12 +78,12 @@ function ResultsPage() {
           </div>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {RESULTS.map(([src, label]) => (
-              <div key={label} className="group overflow-hidden bg-card">
+            {RESULTS.map((src, index) => (
+              <div key={src} className="group overflow-hidden bg-card">
                 <div className="aspect-[4/3] overflow-hidden">
                   <Photo
                     src={src}
-                    alt={label}
+                    alt={`Student receiving a result at The Howard's Council, photo ${index + 1}`}
                     className="transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -92,7 +92,7 @@ function ResultsPage() {
                   <p className="text-xs font-bold uppercase tracking-widest text-coral-deep">
                     Result
                   </p>
-                  <h3 className="mt-1 font-display text-xl font-bold">{label}</h3>
+                  <h3 className="mt-1 font-display text-xl font-bold">Celebrating student results</h3>
                 </div>
               </div>
             ))}

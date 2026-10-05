@@ -21,6 +21,24 @@ export const photos = {
   galleryTwo: galleryTwo,
   galleryThree: galleryThree,
 };
+const classroomFiles = import.meta.glob("/src/assets/classroom/*.{jpg,jpeg,png,webp}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+export const classroomPhotos = Object.entries(classroomFiles)
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([, src], i) => ({ src, alt: `Classroom training at The Howard's Council, photo ${i + 1}` }));
+
+const mentorFiles = import.meta.glob("/src/assets/mentor/*.{jpg,jpeg,png,webp}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+export const mentor = {
+  name: "Saurabh Sharma",
+  photo: Object.values(mentorFiles)[0] ?? null,
+};
 export const phone = "+919997756675";
 export const phoneLabel = "099977 56675";
 export const whatsapp = (message: string) =>
@@ -163,6 +181,23 @@ export const courses = [
     ],
   },
   {
+    slug: "french",
+    name: "French",
+    category: "Languages & skills",
+    tagline: "Start speaking French with confidence.",
+    image: photos.classroom,
+    overview:
+      "Build a practical foundation in French through structured lessons covering pronunciation, vocabulary, grammar and everyday conversation.",
+    audience:
+      "For beginners and learners interested in study, work, travel or learning a new language.",
+    covered: [
+      "Pronunciation & speaking",
+      "Vocabulary & grammar",
+      "Reading & listening",
+      "Everyday conversation",
+    ],
+  },
+  {
     slug: "personality-development",
     name: "Personality Development",
     category: "Languages & skills",
@@ -187,6 +222,6 @@ export const galleryPhotos = [
   photos.campus,
 ];
 export const address = "618, Shiv Mandir Lane, Begum Bagh, Meerut, Uttar Pradesh 250001";
-const place = encodeURIComponent(`The Howards Council ${address}`);
+const place = encodeURIComponent(`The Howard's Council ${address}`);
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${place}`;
 export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place}`;

@@ -41,7 +41,7 @@ function CoursePage() {
           <div className="relative">
             <div className="absolute -bottom-3 -left-3 h-28 w-28 bg-secondary" />
             <div className="relative aspect-[16/9] overflow-hidden rounded-br-[5rem] rounded-tl-md">
-              <Photo src={c.image} alt={`${c.name} course at The Howards Council`} />
+              <Photo src={c.image} alt={`${c.name} course at The Howard's Council`} />
             </div>
           </div>
         </div>
