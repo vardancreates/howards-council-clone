@@ -12,7 +12,7 @@ export const Route = createFileRoute("/courses/$slug")({
       loaderData?.name ?? "Course",
       loaderData
         ? `${loaderData.name} classes in Meerut. ${loaderData.overview}`
-        : "Explore courses at The Howard’s Council.",
+        : "Explore courses at The Howards Council.",
     ),
   component: CoursePage,
 });
@@ -32,7 +32,7 @@ function CoursePage() {
               <p className="mt-5 text-2xl font-medium">{c.tagline}</p>
               <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">{c.overview}</p>
               <div className="mt-8">
-                <Action href={whatsapp(`Hi! I'd like details about ${c.name} coaching.`)}>
+                <Action href={whatsapp(`Hi! I'd like to know more about ${c.name}.`)}>
                   Enquire on WhatsApp →
                 </Action>
               </div>
@@ -41,7 +41,7 @@ function CoursePage() {
           <div className="relative">
             <div className="absolute -bottom-3 -left-3 h-28 w-28 bg-secondary" />
             <div className="relative aspect-[16/9] overflow-hidden rounded-br-[5rem] rounded-tl-md">
-              <Photo src={c.image} alt={`${c.name} course at The Howard's Council`} />
+              <Photo src={c.image} alt={`${c.name} language training at The Howards Council`} />
             </div>
           </div>
         </div>
@@ -50,13 +50,14 @@ function CoursePage() {
         <div>
           <Eyebrow>About this course</Eyebrow>
           <h2 className="font-display text-4xl font-extrabold">Learn with a clear purpose.</h2>
-          <p className="mt-5 leading-relaxed text-muted-foreground">{c.overview}</p>
-          <Eyebrow>Who it's for</Eyebrow>
-          <p className="mt-3 text-lg leading-relaxed text-muted-foreground">{c.audience}</p>
+          <div className="mt-10">
+            <Eyebrow>Who it's for</Eyebrow>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">{c.audience}</p>
+          </div>
         </div>
         <div className="bg-muted p-8">
-          <Eyebrow>What’s covered</Eyebrow>
-          <ul className="space-y-5">
+          <Eyebrow>What you’ll work on</Eyebrow>
+          <ul className="mt-2 space-y-5">
             {c.covered.map((x) => (
               <li key={x} className="border-b pb-4 font-medium">
                 ✓ &nbsp;{x}
@@ -67,44 +68,54 @@ function CoursePage() {
       </section>
       <section className="bg-ink px-5 py-16 text-ink-foreground">
         <div className="mx-auto max-w-7xl lg:px-8">
-          <Eyebrow>Join a class</Eyebrow>
-          <h2 className="font-display text-4xl font-extrabold">Batch timings</h2>
+          <Eyebrow>Start learning</Eyebrow>
+          <h2 className="font-display text-4xl font-extrabold">Find your right batch.</h2>
           <p className="mt-4 text-ink-foreground/70">
-            Contact us for current batch timings and availability.
+            Contact us for current batch timings, availability and course details.
           </p>
           <div className="mt-7">
-            <Action href={whatsapp(`Hi! What are the current ${c.name} batch timings?`)}>
-              Ask about timings →
+            <Action
+              href={whatsapp(
+                `Hi! I'd like to know about the current ${c.name} batches, timings and availability.`,
+              )}
+            >
+              Ask about batches →
             </Action>
           </div>
         </div>
       </section>
       <section className="mx-auto max-w-3xl px-5 py-20">
-        <Eyebrow>FAQ</Eyebrow>
-        <h2 className="font-display text-4xl font-extrabold">Good to know.</h2>
+        <Eyebrow>Questions</Eyebrow>
+        <h2 className="font-display text-4xl font-extrabold">Good to know before you start.</h2>
         <div className="mt-8 divide-y border-y">
           <details className="py-5">
-            <summary className="cursor-pointer font-bold">Can I attend a free demo class?</summary>
+            <summary className="cursor-pointer font-bold">Is a demo class available?</summary>
             <p className="mt-3 text-muted-foreground">
-              Yes. Contact us to book your free demo class.
+              Contact us to check current demo class availability and book a session.
             </p>
           </details>
           <details className="py-5">
-            <summary className="cursor-pointer font-bold">How do I find the right batch?</summary>
+            <summary className="cursor-pointer font-bold">
+              How do I find the right class for me?
+            </summary>
             <p className="mt-3 text-muted-foreground">
-              Message us with your preferred schedule and we'll share the latest options.
+              Contact us with your learning goal and preferred schedule, and we'll help you
+              understand the available options for {c.name}.
             </p>
           </details>
           <details className="py-5">
-            <summary className="cursor-pointer font-bold">How do I find out the fees?</summary>
+            <summary className="cursor-pointer font-bold">
+              How can I get course fees and details?
+            </summary>
             <p className="mt-3 text-muted-foreground">
-              Contact us for the current fee information for {c.name}.
+              Contact us for the latest fee information, course details and available options for{" "}
+              {c.name}.
             </p>
           </details>
         </div>
         <div className="mt-9">
-          <Action href={whatsapp(`Hi! I'd like details about ${c.name} coaching.`)}>
-            Enquire on WhatsApp →
+          <Action href={whatsapp(`Hi! I'd like to know more about ${c.name}.`)}>
+            Talk to us on WhatsApp →
           </Action>
         </div>
       </section>

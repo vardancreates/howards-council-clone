@@ -8,6 +8,15 @@ import business from "@/assets/photos/business.jpg";
 import galleryOne from "@/assets/photos/gallery-one.jpg";
 import galleryTwo from "@/assets/photos/gallery-two.jpg";
 import galleryThree from "@/assets/photos/gallery-three.jpg";
+import ielts from "@/assets/photos/ielts.jpg";
+import pte from "@/assets/photos/pte.jpg";
+import toefl from "@/assets/photos/toefl.jpg";
+import celpip from "@/assets/photos/celpip.jpg";
+import spokenEnglish from "@/assets/photos/spoken-english.jpg";
+import businessEnglish from "@/assets/photos/business-english.jpg";
+import german from "@/assets/photos/german.jpg";
+import spanish from "@/assets/photos/spanish.jpg";
+import personalityDevelopment from "@/assets/photos/personality-development.jpg";
 
 export const photos = {
   hero: hero,
@@ -20,6 +29,15 @@ export const photos = {
   galleryOne: galleryOne,
   galleryTwo: galleryTwo,
   galleryThree: galleryThree,
+  ielts: ielts,
+  pte: pte,
+  toefl: toefl,
+  celpip: celpip,
+  spokenEnglish: spokenEnglish,
+  businessEnglish: businessEnglish,
+  german: german,
+  spanish: spanish,
+  personalityDevelopment: personalityDevelopment,
 };
 const classroomFiles = import.meta.glob("/src/assets/classroom/*.{jpg,jpeg,png,webp}", {
   eager: true,
@@ -28,7 +46,10 @@ const classroomFiles = import.meta.glob("/src/assets/classroom/*.{jpg,jpeg,png,w
 }) as Record<string, string>;
 export const classroomPhotos = Object.entries(classroomFiles)
   .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
-  .map(([, src], i) => ({ src, alt: `Classroom training at The Howard's Council, photo ${i + 1}` }));
+  .map(([, src], i) => ({
+    src,
+    alt: `Classroom training at The Howard's Council, photo ${i + 1}`,
+  }));
 
 const mentorFiles = import.meta.glob("/src/assets/mentor/*.{jpg,jpeg,png,webp}", {
   eager: true,
@@ -49,7 +70,7 @@ export const courses = [
     name: "IELTS",
     category: "Test preparation",
     tagline: "Prepare with purpose. Aim for your target band.",
-    image: photos.study,
+    image: photos.ielts,
     overview:
       "Prepare for IELTS with focused practice across Listening, Reading, Writing and Speaking, supported by feedback, strategy and regular test practice.",
     audience:
@@ -66,7 +87,7 @@ export const courses = [
     name: "PTE",
     category: "Test preparation",
     tagline: "Get confident with the computer-based test.",
-    image: photos.lesson,
+    image: photos.pte,
     overview:
       "Build the skills and test familiarity needed for PTE Academic through targeted practice in Speaking & Writing, Reading and Listening.",
     audience:
@@ -83,7 +104,7 @@ export const courses = [
     name: "TOEFL",
     category: "Test preparation",
     tagline: "Build the academic English you need.",
-    image: photos.campus,
+    image: photos.toefl,
     overview:
       "Prepare for TOEFL iBT with focused practice in academic Reading, Listening, Writing and Speaking, along with strategies for the current test format.",
     audience:
@@ -100,7 +121,7 @@ export const courses = [
     name: "CELPIP",
     category: "Test preparation",
     tagline: "Prepare for English in real-world situations.",
-    image: photos.hero,
+    image: photos.celpip,
     overview:
       "Build practical English skills for the CELPIP General test with focused preparation across Listening, Reading, Writing and Speaking.",
     audience:
@@ -117,7 +138,7 @@ export const courses = [
     name: "Spoken English",
     category: "Languages & skills",
     tagline: "Speak more clearly. Communicate with confidence.",
-    image: photos.language,
+    image: photos.spokenEnglish,
     overview:
       "Build practical English for everyday conversations through guided speaking, listening, vocabulary and pronunciation practice.",
     audience:
@@ -151,7 +172,7 @@ export const courses = [
     name: "German",
     category: "Languages & skills",
     tagline: "Start speaking German with confidence.",
-    image: photos.galleryOne,
+    image: photos.german,
     overview:
       "Build a practical foundation in German through structured lessons covering pronunciation, vocabulary, grammar and everyday communication.",
     audience:
@@ -168,7 +189,7 @@ export const courses = [
     name: "Spanish",
     category: "Languages & skills",
     tagline: "Learn Spanish for real conversations.",
-    image: photos.galleryTwo,
+    image: photos.spanish,
     overview:
       "Develop a practical foundation in Spanish through guided speaking, vocabulary, grammar, listening and everyday communication.",
     audience:
@@ -185,7 +206,7 @@ export const courses = [
     name: "French",
     category: "Languages & skills",
     tagline: "Start speaking French with confidence.",
-    image: photos.classroom,
+    image: photos.personalityDevelopment,
     overview:
       "Build a practical foundation in French through structured lessons covering pronunciation, vocabulary, grammar and everyday conversation.",
     audience:
