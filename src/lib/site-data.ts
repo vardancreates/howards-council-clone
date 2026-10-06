@@ -49,168 +49,263 @@ export const whatsapp = (message: string) =>
 export const courses = [
   {
     slug: "ielts",
+
     name: "IELTS",
+
     category: "Test preparation",
+
     tagline: "Prepare with purpose. Aim for your target band.",
+
     image: photos.ielts,
+
     overview:
-      "Prepare for IELTS with focused practice across Listening, Reading, Writing and Speaking, supported by feedback, strategy and regular test practice.",
+      "IELTS (International English Language Testing System) is an internationally recognised English language proficiency test designed to assess how effectively a candidate can communicate in English. The test evaluates four core skills — Listening, Reading, Writing and Speaking — and is available in different formats depending on the candidate's purpose. IELTS Academic is generally intended for higher education and professional registration, while IELTS General Training focuses more on practical English used in workplace, everyday and social contexts.",
+
     audience:
-      "For students and professionals preparing for study, work or migration through IELTS Academic or General Training.",
+      "For students, professionals and other candidates preparing for IELTS Academic or General Training for study, work, professional registration or migration, depending on the requirements of the relevant institution or authority.",
+
     covered: [
-      "Listening and Reading strategies",
-      "Academic & General Training Writing",
-      "Speaking practice and feedback",
-      "Timed mock tests",
+      "Listening — 30 minutes, 4 sections and 40 questions",
+      "Reading — 60 minutes and 40 questions",
+      "Writing — 60 minutes and 2 tasks",
+      "Speaking — 11–14 minutes across 3 parts",
+      "Academic & General Training test formats",
+      "Question types, assessment criteria and test strategies",
     ],
   },
   {
     slug: "pte",
+
     name: "PTE",
+
     category: "Test preparation",
+
     tagline: "Get confident with the computer-based test.",
+
     image: photos.pte,
+
     overview:
-      "Build the skills and test familiarity needed for PTE Academic through targeted practice in Speaking & Writing, Reading and Listening.",
+      "PTE Academic is a computer-based English language proficiency test designed to assess a candidate's ability to communicate effectively in English for academic and international purposes. It assesses Speaking, Writing, Reading and Listening through integrated computer-based tasks, with question types designed around academic and real-life communication. The test is divided into three main parts — Speaking & Writing, Reading and Listening — and is completed in a single test session.",
+
     audience:
-      "For students and applicants looking for a computer-based English proficiency test for study or other international goals.",
+      "For students, professionals and other candidates preparing for PTE Academic for study, work or migration purposes, depending on the requirements of the university, organisation or relevant authority.",
+
     covered: [
-      "Speaking & Writing task practice",
-      "Reading strategies",
-      "Listening & note-taking",
-      "Timed computer-based practice",
+      "Speaking & Writing — 76–84 minutes, 9 question types",
+      "Reading — 23–30 minutes, 5 question types",
+      "Listening — 31–39 minutes, 8 question types",
+      "Integrated Speaking, Writing, Reading and Listening tasks",
+      "Computer-based question formats and timing",
+      "Test strategies, practice and response techniques",
     ],
   },
   {
     slug: "toefl",
+
     name: "TOEFL",
+
     category: "Test preparation",
+
     tagline: "Build the academic English you need.",
+
     image: photos.toefl,
+
     overview:
-      "Prepare for TOEFL iBT with focused practice in academic Reading, Listening, Writing and Speaking, along with strategies for the current test format.",
+      "TOEFL iBT is an English language proficiency test designed to measure the academic English skills needed for communication in higher-education environments. The test evaluates four core areas — Reading, Listening, Writing and Speaking — using tasks that reflect academic, classroom and everyday university contexts. The current TOEFL iBT uses a multistage adaptive format for Reading and Listening, allowing the test experience to adjust according to a candidate's performance. The test takes approximately two hours, although the exact number of questions and timing can vary.",
+
     audience:
-      "For students preparing to demonstrate English proficiency for university and academic environments.",
+      "For students and other candidates preparing to demonstrate their English language ability for universities, higher education and other academic environments where TOEFL iBT scores are accepted.",
+
     covered: [
-      "Academic Reading & Listening",
-      "Speaking practice",
-      "Academic Writing",
-      "Current-format mock practice",
+      "Reading — adaptive tasks including everyday and academic texts",
+      "Listening — conversations, announcements and academic talks",
+      "Writing — sentence building, email and academic discussion tasks",
+      "Speaking — listen-and-repeat and interview tasks",
+      "Computer-based test format and adaptive sections",
+      "Academic English strategies, task practice and timed preparation",
     ],
   },
   {
     slug: "celpip",
+
     name: "CELPIP",
+
     category: "Test preparation",
-    tagline: "Prepare for English in real-world situations.",
+
+    tagline: "Build practical English for real-world communication.",
+
     image: photos.celpip,
+
     overview:
-      "Build practical English skills for the CELPIP General test with focused preparation across Listening, Reading, Writing and Speaking.",
+      "CELPIP (Canadian English Language Proficiency Index Program) is a computer-delivered English language proficiency test that assesses Listening, Reading, Writing and Speaking. The CELPIP-General Test is designed around English used in everyday social, educational and workplace situations and is completed in a single test sitting. The test measures all four language skills through practical, real-life communication tasks and is used for purposes including Canadian immigration, professional designation and admission to certain educational programs, depending on the requirements of the relevant organisation or authority.",
+
     audience:
-      "For applicants preparing to demonstrate English proficiency for Canadian permanent residence, citizenship or other eligible purposes.",
+      "For candidates preparing to demonstrate English proficiency for Canadian immigration, professional purposes or educational opportunities where CELPIP scores are accepted.",
+
     covered: [
-      "Listening & Reading strategies",
-      "Email and written-response practice",
-      "Speaking task practice",
-      "Full-length practice tests",
+      "Listening — 46–55 minutes across 6 sections",
+      "Reading — 43–56 minutes across 4 sections",
+      "Writing — 53 minutes across 2 tasks",
+      "Speaking — 15 minutes across 8 tasks",
+      "Computer-delivered test format and timing",
+      "Real-life communication tasks and test strategies",
     ],
   },
   {
     slug: "spoken-english",
+
     name: "Spoken English",
-    category: "Languages & skills",
-    tagline: "Speak more clearly. Communicate with confidence.",
+
+    category: "Language training",
+
+    tagline: "Speak clearly. Communicate with confidence.",
+
     image: photos.spokenEnglish,
+
     overview:
-      "Build practical English for everyday conversations through guided speaking, listening, vocabulary and pronunciation practice.",
+      "Spoken English training focuses on developing the practical communication skills needed to understand and use English effectively in everyday, social, academic and professional situations. Language proficiency can be understood through the Common European Framework of Reference for Languages (CEFR), which describes progression from A1 beginner to C2 proficient user. As learners progress, they develop greater control over vocabulary, grammar, pronunciation, fluency and interaction, allowing them to communicate with increasing confidence and independence.",
+
     audience:
-      "For learners who want to communicate more naturally and confidently in daily life, education or work.",
+      "For learners who want to improve their everyday English communication, build speaking confidence, strengthen their language fundamentals or develop the English skills needed for study, work and professional interaction.",
+
     covered: [
-      "Everyday conversation",
-      "Pronunciation & fluency",
-      "Practical vocabulary",
-      "Listening & speaking confidence",
+      "Speaking fluency and everyday conversation",
+      "Listening and understanding spoken English",
+      "Vocabulary, grammar and sentence formation",
+      "Pronunciation, clarity and natural expression",
+      "Conversation, interaction and practical communication",
+      "Progressive development from foundational to advanced levels",
     ],
   },
   {
     slug: "business-english",
+
     name: "Business English",
-    category: "Languages & skills",
-    tagline: "Communicate with confidence at work.",
+
+    category: "Language training",
+
+    tagline: "Communicate clearly and professionally at work.",
+
     image: photos.businessEnglish,
+
     overview:
-      "Develop the English needed for meetings, presentations, professional conversations, interviews and workplace writing.",
+      "Business English focuses on developing the English communication skills needed in professional and workplace environments. It goes beyond general vocabulary by helping learners communicate more effectively with colleagues, clients and other professional contacts through practical situations such as meetings, presentations, interviews, workplace conversations and written communication. A structured approach to language development can be aligned with CEFR proficiency levels, helping learners build greater accuracy, fluency and confidence as their professional communication needs grow.",
+
     audience:
-      "For professionals, students and job seekers who want to communicate more effectively in professional settings.",
+      "For students, professionals, job seekers and working individuals who want to improve their English for interviews, workplace communication, professional relationships and international business environments.",
+
     covered: [
-      "Meetings & presentations",
-      "Professional emails & writing",
-      "Interviews & networking",
-      "Workplace communication",
+      "Professional speaking and workplace conversations",
+      "Business vocabulary and professional expressions",
+      "Meetings, presentations and discussions",
+      "Professional emails and written communication",
+      "Interview and workplace communication practice",
+      "Listening and communication skills for professional settings",
     ],
   },
   {
     slug: "german",
+
     name: "German",
-    category: "Languages & skills",
-    tagline: "Start speaking German with confidence.",
+
+    category: "Language training",
+
+    tagline: "Build your German, level by level.",
+
     image: photos.german,
+
     overview:
-      "Build a practical foundation in German through structured lessons covering pronunciation, vocabulary, grammar and everyday communication.",
+      "German is taught through a structured progression of language proficiency based on the Common European Framework of Reference for Languages (CEFR), ranging from A1 for beginners to C2 for highly proficient users. As learners progress through these levels, they develop their ability to understand, speak, read and write German with increasing independence and accuracy. The Goethe-Institut offers internationally recognised German examinations corresponding to CEFR levels from A1 to C2, providing formal proof of German language proficiency for a range of academic, professional and other purposes.",
+
     audience:
-      "For beginners and learners preparing for study, work, travel or personal language goals.",
+      "For learners starting German from the beginner level as well as students, professionals and other candidates working toward a specific CEFR level or preparing for a recognised German language examination.",
+
     covered: [
-      "Pronunciation & speaking",
-      "Vocabulary & grammar",
-      "Reading & listening",
-      "Everyday conversation",
+      "A1–C2 CEFR language progression",
+      "German speaking and everyday communication",
+      "Reading, listening and written communication",
+      "Grammar, vocabulary and pronunciation",
+      "Level-focused practice and assessment",
+      "Preparation for recognised German language examinations",
     ],
   },
   {
     slug: "spanish",
+
     name: "Spanish",
-    category: "Languages & skills",
-    tagline: "Learn Spanish for real conversations.",
+
+    category: "Language training",
+
+    tagline: "Learn Spanish with a clear path from A1 to C2.",
+
     image: photos.spanish,
+
     overview:
-      "Develop a practical foundation in Spanish through guided speaking, vocabulary, grammar, listening and everyday communication.",
+      "Spanish is a widely spoken international language that can be developed through a structured progression based on the Common European Framework of Reference for Languages (CEFR), from A1 beginner to C2 advanced proficiency. As learners progress through these levels, they build the ability to understand and communicate in Spanish across personal, social, educational and professional situations. The Instituto Cervantes administers the DELE examinations, official Spanish qualifications covering the six CEFR levels from A1 to C2, providing formal recognition of Spanish language proficiency.",
+
     audience:
-      "For beginners and learners interested in travel, study, work or learning a new language.",
+      "For learners beginning Spanish as well as students, professionals and other candidates who want to develop their Spanish communication skills or work toward a recognised CEFR level and Spanish language qualification.",
+
     covered: [
-      "Pronunciation & conversation",
-      "Everyday vocabulary",
-      "Grammar foundations",
-      "Listening & reading",
+      "A1–C2 CEFR language progression",
+      "Spanish speaking and everyday communication",
+      "Reading and listening comprehension",
+      "Writing and written interaction",
+      "Grammar, vocabulary and pronunciation",
+      "Preparation for recognised Spanish language examinations",
     ],
   },
   {
     slug: "french",
+
     name: "French",
-    category: "Languages & skills",
-    tagline: "Start speaking French with confidence.",
+
+    category: "Language training",
+
+    tagline: "Build your French with a clear path from A1 to C2.",
+
     image: photos.french,
+
     overview:
-      "Build a practical foundation in French through structured lessons covering pronunciation, vocabulary, grammar and everyday conversation.",
+      "French is an internationally spoken language that can be developed through a structured progression based on the Common European Framework of Reference for Languages (CEFR), from A1 beginner to C2 advanced proficiency. As learners progress, they develop their ability to understand and communicate in French across everyday, academic and professional situations. France Éducation international administers the DELF and DALF diplomas, which provide official recognition of French language proficiency across the different CEFR levels.",
+
     audience:
-      "For beginners and learners interested in study, work, travel or learning a new language.",
+      "For learners beginning French as well as students, professionals and other candidates who want to develop their French communication skills or work toward a recognised CEFR level and French language qualification.",
+
     covered: [
-      "Pronunciation & speaking",
-      "Vocabulary & grammar",
-      "Reading & listening",
-      "Everyday conversation",
+      "A1–C2 CEFR language progression",
+      "French speaking and everyday communication",
+      "Listening and reading comprehension",
+      "Written and oral communication",
+      "Grammar, vocabulary and pronunciation",
+      "Preparation for recognised French language examinations",
     ],
   },
   {
     slug: "personality-development",
+
     name: "Personality Development",
-    category: "Languages & skills",
-    tagline: "Build confidence that shows.",
+
+    category: "Personal development",
+
+    tagline: "Build confidence. Communicate with greater impact.",
+
     image: photos.personalityDevelopment,
+
     overview:
-      "Develop communication, presentation and interpersonal skills that help you express yourself with greater confidence in academic and professional situations.",
+      "Personality development focuses on strengthening the personal and interpersonal skills that influence how individuals communicate, present themselves and interact with others. It can include areas such as communication, confidence, self-expression, interpersonal awareness and professional behaviour. Developing these skills can help learners become more comfortable in conversations, presentations, interviews and other situations where clear communication and a confident presence are important.",
+
     audience:
-      "For students, job seekers and professionals looking to strengthen communication and personal confidence.",
-    covered: ["Public speaking", "Body language", "Interview skills", "Communication confidence"],
+      "For students, job seekers, professionals and individuals who want to improve their communication, confidence, interpersonal skills and overall professional presence.",
+
+    covered: [
+      "Communication and self-expression",
+      "Confidence and interpersonal interaction",
+      "Public speaking and presentation practice",
+      "Interview and professional communication skills",
+      "Body language and professional presence",
+      "Practical activities for personal and social development",
+    ],
   },
 ] as const;
 

@@ -5,6 +5,8 @@ import { classroomPhotos, courses, whatsapp } from "@/lib/site-data";
 import result1 from "@/assets/results/result-1.jpg";
 import result2 from "@/assets/results/result-2.jpg";
 import result3 from "@/assets/results/result-3.jpg";
+import learnWithPurpose from "@/assets/photos/learn-with-purpose.webp";
+import heroBackground from "@/assets/photos/howards-hero-bg.webp";
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -17,9 +19,9 @@ export const Route = createFileRoute("/")({
 
 const WORDS = ["Hello", "Hallo", "Hola", "Bonjour", "नमस्ते"];
 const STATS = [
-  ["23", "Years"],
-  ["4.6★", "Google rating"],
-  ["388", "Google reviews"],
+  ["23", "Years of language training"],
+  ["10", "Language & test programs"],
+  ["4", "Core language skills"],
 ];
 const WHY = [
   [
@@ -44,44 +46,66 @@ function Home() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[1.1fr_1fr] lg:px-8 lg:py-24">
-        <div>
-          <Eyebrow>LANGUAGE TRAINING · MEERUT</Eyebrow>
-          <h1 className="font-display text-6xl font-extrabold leading-[0.95] sm:text-7xl lg:text-8xl">
-            Let you <span className="text-primary">speak</span> better.
-          </h1>
-          <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-            IELTS, PTE, TOEFL and CELPIP coaching, spoken English and foreign languages — built
-            around practical learning, confidence and real results.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Action href={whatsapp("Hi! I'd like to book a free demo class.")}>
-              Book a free demo class
-            </Action>
-            <Link
-              to="/courses"
-              className="inline-flex h-12 items-center justify-center rounded-sm border-2 border-ink px-6 font-bold hover:bg-ink hover:text-ink-foreground"
-            >
-              See all courses
-            </Link>
+      <section className="relative overflow-hidden">
+        {/* Subtle hero background image */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.45] sm:opacity-[0.5]"
+          style={{ backgroundImage: `url(${heroBackground})` }}
+          aria-hidden
+        />
+
+        {/* Protect the text area and softly fade the image */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/55 via-background/20 to-transparent"
+          aria-hidden
+        />
+
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[1.1fr_1fr] lg:px-8 lg:py-24">
+          <div>
+            <Eyebrow>LANGUAGE TRAINING · MEERUT</Eyebrow>
+
+            <h1 className="font-display text-6xl font-extrabold leading-[0.95] sm:text-7xl lg:text-8xl">
+              Let you <span className="text-primary">speak</span> better.
+            </h1>
+
+            <p className="mt-6 max-w-lg text-lg text-muted-foreground">
+              IELTS, PTE, TOEFL and CELPIP coaching, spoken English and foreign languages — built
+              around practical learning, confidence and real results.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Action href={whatsapp("Hi! I'd like to book a free demo class.")}>
+                Book a free demo class
+              </Action>
+
+              <Link
+                to="/courses"
+                className="inline-flex h-12 items-center justify-center rounded-sm border-2 border-ink px-6 font-bold hover:bg-ink hover:text-ink-foreground"
+              >
+                See all courses
+              </Link>
+            </div>
           </div>
-        </div>
-        <div className="relative mx-auto h-72 w-full max-w-sm sm:h-[26rem]" aria-hidden>
-          <div className="animate-floaty absolute left-0 top-4 flex h-44 w-64 items-center justify-center bubble-h bg-primary sm:h-60 sm:w-80">
-            <span
-              key={i}
-              className="animate-word font-display text-5xl font-extrabold text-primary-foreground sm:text-6xl"
-            >
-              {WORDS[i]}
-            </span>
-          </div>
-          <div className="animate-floaty absolute bottom-2 right-0 flex h-32 w-48 items-center justify-center bubble-h-r bg-secondary [animation-delay:-3s] sm:h-44 sm:w-60">
-            <span
-              key={next}
-              className="animate-word font-display text-4xl font-extrabold text-secondary-foreground"
-            >
-              {WORDS[next]}
-            </span>
+
+          {/* Existing animated language bubbles */}
+          <div className="relative mx-auto h-72 w-full max-w-sm sm:h-[26rem]" aria-hidden>
+            <div className="animate-floaty absolute left-0 top-4 flex h-44 w-64 items-center justify-center bubble-h bg-primary sm:h-60 sm:w-80">
+              <span
+                key={i}
+                className="animate-word font-display text-5xl font-extrabold text-primary-foreground sm:text-6xl"
+              >
+                {WORDS[i]}
+              </span>
+            </div>
+
+            <div className="animate-floaty absolute bottom-2 right-0 flex h-32 w-48 items-center justify-center bubble-h-r bg-secondary [animation-delay:-3s] sm:h-44 sm:w-60">
+              <span
+                key={next}
+                className="animate-word font-display text-4xl font-extrabold text-secondary-foreground"
+              >
+                {WORDS[next]}
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -162,7 +186,10 @@ function Home() {
           <div className="relative">
             <div className="absolute -bottom-3 -left-3 h-28 w-28 bg-primary" />
             <div className="relative aspect-[4/3] overflow-hidden rounded-br-[5rem] rounded-tl-md">
-              <Photo src={courses[1]?.image ?? heroImg} alt="Classroom training" />
+              <Photo
+                src={learnWithPurpose}
+                alt="Students learning and communicating in an English language class"
+              />
             </div>
           </div>
           <div>
@@ -242,7 +269,7 @@ function Home() {
             <h2 className="font-display text-4xl font-extrabold md:text-5xl">Saurabh Sharma</h2>
 
             <p className="mt-3 font-display text-xl font-bold text-coral-deep">
-              IELTS IDP Certified Trainer · 23 Years of Experience
+              IELTS IDP Certified Trainer · Language Trainer · 23 Years of Experience
             </p>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
@@ -259,37 +286,86 @@ function Home() {
         </div>
       </section>
 
-      {/* Results preview */}
+      {/* Google Reviews */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-        <Eyebrow>Student results</Eyebrow>
+        <Eyebrow>Google reviews</Eyebrow>
 
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <h2 className="font-display text-4xl font-extrabold md:text-5xl">
-              Results that speak for themselves.
+              What our students say.
             </h2>
 
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              A glimpse of the results achieved by learners at The Howards Council.
+              Real experiences from learners who have trained with The Howards Council.
             </p>
           </div>
 
-          <Link to="/results" className="shrink-0 font-bold text-coral-deep">
-            View all results →
-          </Link>
+          <a
+            href="https://www.google.com/search?q=The+Howards+Council+Meerut"
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 font-bold text-coral-deep"
+          >
+            View on Google →
+          </a>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-3">
-          {[result1, result2, result3].map((src, index) => (
-            <Link key={src} to="/results" className="group block overflow-hidden">
-              <div className="aspect-[4/3] overflow-hidden">
-                <Photo
-                  src={src}
-                  alt={`Student receiving a result at The Howards Council, photo ${index + 1}`}
-                  className="transition-transform duration-500 group-hover:scale-105"
-                />
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              name: "Mukul Goswami",
+              review:
+                "I enrolled for IELTS Coaching at Howard's Council and got an 8 Bands score. The learning was very detailed and Saurabh sir guided me through every single step of the process, which led me to this amazing score. Definitely recommended, amazing teaching not only for english but many other languages too.",
+            },
+            {
+              name: "Anubhav Sonkar",
+              review:
+                "THE HOWARD'S COUNCIL provides exceptional guidance for IELTS and a wide range of other courses in a highly supportive and motivating environment. With their expert faculty, personalized attention, and result-oriented approach, I was able to achieve an overall band score of 7. I am truly grateful for their continuous support and dedication throughout my preparation journey.",
+            },
+            {
+              name: "Fardeen Khan",
+              review:
+                "Your English speaking course has been an incredible journey for me, and I cannot thank you enough for your support and guidance. With your help, I have seen tremendous improvement in my language proficiency and interview skills. The practical techniques and interactive sessions gave me the confidence to excel in interviews and secure a position in a reputable company.",
+            },
+            {
+              name: "Saloni Rani",
+              review:
+                "Learning under Saurabh Sir at The Howard's Council has been truly transformational. He is extremely dedicated, knowledgeable, and supportive. His way of teaching builds confidence and makes even difficult topics easy to understand. The institute also offers foreign language courses like Spanish, German, and French.",
+            },
+            {
+              name: "Manish Sharma",
+              review:
+                "I am highly satisfied with The Howards Council. The institute provides excellent training in English, French, German, and Spanish languages. Teachers are knowledgeable, supportive, and interactive. The learning environment is friendly and motivating. Classes are well-structured, helping students improve communication skills and confidence effectively.",
+            },
+            {
+              name: "Vaishali Tomar",
+              review:
+                "The teachers at THE HOWARD'S COUNCIL are incredibly patient, friendly, and make learning truly enjoyable. Their innovative teaching methods kept me engaged throughout the course. I've learned a wide range of English skills here, and I can confidently say that my fluency, personality, and confidence have improved significantly.",
+            },
+          ].map((review) => (
+            <article
+              key={review.name}
+              className="flex h-full flex-col rounded-2xl border border-border bg-background p-6"
+            >
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="font-bold">{review.name}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">Google Review</p>
+                </div>
+
+                <div
+                  className="text-sm tracking-[0.15em] text-coral-deep"
+                  aria-label="5 out of 5 stars"
+                >
+                  ★★★★★
+                </div>
               </div>
-            </Link>
+
+              <p className="mt-5 flex-1 text-sm leading-7 text-muted-foreground">
+                “{review.review}”
+              </p>
+            </article>
           ))}
         </div>
       </section>
@@ -347,7 +423,11 @@ function Home() {
 
         <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
           {classroomPhotos.slice(0, 4).map((photo) => (
-            <Link key={photo.src} to="/gallery" className="group block aspect-[4/5] overflow-hidden">
+            <Link
+              key={photo.src}
+              to="/gallery"
+              className="group block aspect-[4/5] overflow-hidden"
+            >
               <Photo
                 src={photo.src}
                 alt={photo.alt}
