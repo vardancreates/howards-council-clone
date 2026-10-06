@@ -31,7 +31,7 @@ function Page() {
           <h2 className="font-display text-4xl font-extrabold md:text-5xl">Saurabh Sharma</h2>
 
           <p className="mt-3 font-display text-xl font-bold text-coral-deep">
-            IELTS IDP Certified Trainer · 23 Years of Experience
+            IELTS IDP Certified Trainer · Language Trainer · 23 Years of Experience
           </p>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
