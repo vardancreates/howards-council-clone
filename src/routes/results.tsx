@@ -18,8 +18,8 @@ import result10 from "@/assets/results/result-10.jpg";
 export const Route = createFileRoute("/results")({
   head: () =>
     makeHead(
-      "Results",
-      "Explore student results and achievements from The Howard's Council, Meerut.",
+      "Student Results from The Howards Council",
+      "View student result highlights from The Howards Council, a language training institute in Meerut.",
     ),
   component: ResultsPage,
 });
@@ -43,7 +43,7 @@ function ResultsPage() {
       <SectionIntro
         eyebrow="Results"
         title="Real students. Real scores."
-        description="A look at the results and achievements of learners who have trained with The Howard's Council."
+        description="A look at the results and achievements of learners who have trained with The Howards Council."
       />
 
       {/* Key stats */}
@@ -83,7 +83,7 @@ function ResultsPage() {
                 <div className="aspect-[4/3] overflow-hidden">
                   <Photo
                     src={src}
-                    alt={`Student receiving a result at The Howard's Council, photo ${index + 1}`}
+                    alt={`Student receiving a result at The Howards Council, photo ${index + 1}`}
                     className="transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -92,7 +92,9 @@ function ResultsPage() {
                   <p className="text-xs font-bold uppercase tracking-widest text-coral-deep">
                     Result
                   </p>
-                  <h3 className="mt-1 font-display text-xl font-bold">Celebrating student results</h3>
+                  <h3 className="mt-1 font-display text-xl font-bold">
+                    Celebrating student results
+                  </h3>
                 </div>
               </div>
             ))}

@@ -4,8 +4,8 @@ import { photos } from "@/lib/site-data";
 export const Route = createFileRoute("/about")({
   head: () =>
     makeHead(
-      "About Us",
-      "Learn about The Howard's Council, language training in Meerut since 2003.",
+      "About The Howards Council",
+      "Learn about The Howards Council, a language training institute in Meerut since 2003.",
     ),
   component: Page,
 });
@@ -13,9 +13,9 @@ function Page() {
   return (
     <SiteLayout>
       <SectionIntro
-        eyebrow="About The Howard's Council"
+        eyebrow="About The Howards Council"
         title="A trusted name in language training since 2003."
-        description="For more than two decades, The Howard's Council has helped learners in Meerut build stronger language skills, prepare with confidence and communicate better."
+        description="For more than two decades, The Howards Council has helped learners in Meerut build stronger language skills, prepare with confidence and communicate better."
       />
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-24 lg:grid-cols-2 lg:px-8">
         <div className="relative">
@@ -36,7 +36,7 @@ function Page() {
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
             With more than two decades of experience in language training, Saurabh Sharma has built
-            The Howard's Council around a practical and learner-focused approach to language
+            The Howards Council around a practical and learner-focused approach to language
             education. His experience in IELTS preparation and English language training reflects a
             commitment to helping students build stronger skills, greater confidence and a clear
             path towards their goals.

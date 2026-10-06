@@ -1,13 +1,3 @@
-import hero from "@/assets/photos/hero.jpg";
-import classroom from "@/assets/photos/classroom.jpg";
-import campus from "@/assets/photos/campus.jpg";
-import language from "@/assets/photos/language.jpg";
-import lesson from "@/assets/photos/lesson.jpg";
-import study from "@/assets/photos/study.jpg";
-import business from "@/assets/photos/business.jpg";
-import galleryOne from "@/assets/photos/gallery-one.jpg";
-import galleryTwo from "@/assets/photos/gallery-two.jpg";
-import galleryThree from "@/assets/photos/gallery-three.jpg";
 import ielts from "@/assets/photos/ielts.jpg";
 import pte from "@/assets/photos/pte.jpg";
 import toefl from "@/assets/photos/toefl.jpg";
@@ -16,19 +6,10 @@ import spokenEnglish from "@/assets/photos/spoken-english.jpg";
 import businessEnglish from "@/assets/photos/business-english.jpg";
 import german from "@/assets/photos/german.jpg";
 import spanish from "@/assets/photos/spanish.jpg";
+import french from "@/assets/photos/french.jpg";
 import personalityDevelopment from "@/assets/photos/personality-development.jpg";
 
 export const photos = {
-  hero: hero,
-  classroom: classroom,
-  campus: campus,
-  language: language,
-  lesson: lesson,
-  study: study,
-  business: business,
-  galleryOne: galleryOne,
-  galleryTwo: galleryTwo,
-  galleryThree: galleryThree,
   ielts: ielts,
   pte: pte,
   toefl: toefl,
@@ -37,9 +18,10 @@ export const photos = {
   businessEnglish: businessEnglish,
   german: german,
   spanish: spanish,
+  french: french,
   personalityDevelopment: personalityDevelopment,
 };
-const classroomFiles = import.meta.glob("/src/assets/classroom/*.{jpg,jpeg,png,webp}", {
+const classroomFiles = import.meta.glob("/src/assets/classroom/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -48,7 +30,7 @@ export const classroomPhotos = Object.entries(classroomFiles)
   .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
   .map(([, src], i) => ({
     src,
-    alt: `Classroom training at The Howard's Council, photo ${i + 1}`,
+    alt: `Classroom training at The Howards Council, photo ${i + 1}`,
   }));
 
 const mentorFiles = import.meta.glob("/src/assets/mentor/*.{jpg,jpeg,png,webp}", {
@@ -155,7 +137,7 @@ export const courses = [
     name: "Business English",
     category: "Languages & skills",
     tagline: "Communicate with confidence at work.",
-    image: photos.business,
+    image: photos.businessEnglish,
     overview:
       "Develop the English needed for meetings, presentations, professional conversations, interviews and workplace writing.",
     audience:
@@ -206,7 +188,7 @@ export const courses = [
     name: "French",
     category: "Languages & skills",
     tagline: "Start speaking French with confidence.",
-    image: photos.personalityDevelopment,
+    image: photos.french,
     overview:
       "Build a practical foundation in French through structured lessons covering pronunciation, vocabulary, grammar and everyday conversation.",
     audience:
@@ -223,7 +205,7 @@ export const courses = [
     name: "Personality Development",
     category: "Languages & skills",
     tagline: "Build confidence that shows.",
-    image: photos.galleryThree,
+    image: photos.personalityDevelopment,
     overview:
       "Develop communication, presentation and interpersonal skills that help you express yourself with greater confidence in academic and professional situations.",
     audience:
@@ -231,18 +213,8 @@ export const courses = [
     covered: ["Public speaking", "Body language", "Interview skills", "Communication confidence"],
   },
 ] as const;
-export const galleryPhotos = [
-  photos.classroom,
-  photos.lesson,
-  photos.study,
-  photos.language,
-  photos.galleryOne,
-  photos.galleryTwo,
-  photos.galleryThree,
-  photos.business,
-  photos.campus,
-];
+
 export const address = "618, Shiv Mandir Lane, Begum Bagh, Meerut, Uttar Pradesh 250001";
-const place = encodeURIComponent(`The Howard's Council ${address}`);
+const place = encodeURIComponent(`The Howards Council ${address}`);
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${place}`;
 export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place}`;

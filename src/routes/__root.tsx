@@ -14,19 +14,38 @@ import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div className="flex min-h-screen items-center justify-center bg-background px-5">
+      <div className="w-full max-w-2xl text-center">
+        <p className="font-display text-[7rem] font-extrabold leading-none text-primary md:text-[10rem]">
+          404
         </p>
-        <div className="mt-6">
+
+        <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-coral-deep">
+          Page not found
+        </p>
+
+        <h1 className="mt-3 font-display text-3xl font-extrabold md:text-5xl">
+          This page doesn't exist.
+        </h1>
+
+        <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg">
+          The page you're looking for may have moved or the address may be incorrect. Let's get you
+          back to The Howards Council.
+        </p>
+
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Back to home →
+          </Link>
+
+          <Link
+            to="/courses"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-5 py-3 text-sm font-bold text-foreground transition-colors hover:bg-accent"
+          >
+            Explore courses
           </Link>
         </div>
       </div>

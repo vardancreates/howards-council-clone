@@ -40,15 +40,13 @@ export function Action({
     </Button>
   );
 }
-export function PageHead({ title, description }: { title: string; description: string }) {
-  return <></>;
-}
+
 export const makeHead = (title: string, description: string) => ({
   meta: [
-    { title: `${title} | The Howard's Council` },
+    { title: `${title} | The Howards Council` },
     { name: "description", content: description },
-    { name: "robots", content: "noindex" },
-    { property: "og:title", content: `${title} | The Howard's Council` },
+    { name: "robots", content: "index, follow" },
+    { property: "og:title", content: `${title} | The Howards Council` },
     { property: "og:description", content: description },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
@@ -61,11 +59,11 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-5 px-5 lg:px-8">
         <Link
           to="/"
-          aria-label="The Howard's Council home"
+          aria-label="The Howards Council home"
           onClick={() => setOpen(false)}
           className="shrink-0"
         >
-          <img src={logo.url} alt="The Howard's Council" className="h-14 w-auto" />
+          <img src={logo.url} alt="The Howards Council" className="h-14 w-auto" />
         </Link>
         <nav
           aria-label="Main navigation"
@@ -174,7 +172,7 @@ export function SiteHeader() {
 }
 export function SiteFooter() {
   const directionsUrl =
-    "https://www.google.com/maps/dir/?api=1&destination=The+Howard%27s+Council%2C+618%2C+Shiv+Mandir+Lane%2C+Begum+Bagh%2C+Meerut%2C+Uttar+Pradesh+250001";
+    "https://www.google.com/maps/dir/?api=1&destination=The+Howards+Council%2C+618%2C+Shiv+Mandir+Lane%2C+Begum+Bagh%2C+Meerut%2C+Uttar+Pradesh+250001";
 
   return (
     <>
@@ -183,7 +181,7 @@ export function SiteFooter() {
           <div>
             <img
               src={logo.url}
-              alt="The Howard's Council"
+              alt="The Howards Council"
               className="h-16 w-auto bg-background p-1"
             />
             <p className="mt-5 max-w-xs text-sm text-ink-foreground/70">
@@ -217,10 +215,10 @@ export function SiteFooter() {
               target="_blank"
               rel="noreferrer"
               className="group mt-4 block overflow-hidden rounded-sm"
-              aria-label="Get directions to The Howard's Council"
+              aria-label="Get directions to The Howards Council"
             >
               <iframe
-                title="The Howard's Council location"
+                title="The Howards Council location"
                 src="https://www.google.com/maps?q=The+Howard%27s+Council%2C+618%2C+Shiv+Mandir+Lane%2C+Begum+Bagh%2C+Meerut%2C+Uttar+Pradesh+250001&output=embed"
                 className="pointer-events-none h-44 w-full border-0 grayscale transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
@@ -245,7 +243,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mx-auto mt-12 flex max-w-7xl flex-wrap justify-between gap-2 border-t border-ink-foreground/20 pt-6 text-xs text-ink-foreground/60">
-          <span>© {new Date().getFullYear()} The Howard's Council</span>
+          <span>© {new Date().getFullYear()} The Howards Council</span>
           <a
             href="https://vebstudio.netlify.app/"
             target="_blank"
@@ -333,7 +331,7 @@ export function SectionIntro({
 
 export function MentorPhoto() {
   if (mentor.photo) {
-    return <Photo src={mentor.photo} alt={`${mentor.name}, mentor at The Howard's Council`} />;
+    return <Photo src={mentor.photo} alt={`${mentor.name}, mentor at The Howards Council`} />;
   }
   return (
     <div className="grid h-full w-full place-items-center bg-muted font-display text-8xl font-extrabold text-coral-deep">

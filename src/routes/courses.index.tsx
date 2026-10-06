@@ -28,7 +28,7 @@ function CoursesPage() {
             <div className="aspect-[4/3] overflow-hidden">
               <Photo
                 src={c.image}
-                alt={`${c.name} course at The Howard's Council`}
+                alt={`${c.name} course at The Howards Council`}
                 className="transition-transform duration-500 group-hover:scale-105"
               />
             </div>

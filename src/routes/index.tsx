@@ -102,7 +102,7 @@ function Home() {
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
           <div>
-            <Eyebrow>Welcome to The Howard's Council</Eyebrow>
+            <Eyebrow>Welcome to The Howards Council</Eyebrow>
 
             <h2 className="font-display text-4xl font-extrabold md:text-5xl">
               Language learning that moves with you.
@@ -166,7 +166,7 @@ function Home() {
             </div>
           </div>
           <div>
-            <Eyebrow>Why The Howard's</Eyebrow>
+            <Eyebrow>Why The Howards</Eyebrow>
             <h2 className="font-display text-4xl font-extrabold md:text-5xl">
               Learn with purpose. Grow with confidence.
             </h2>
@@ -270,7 +270,7 @@ function Home() {
             </h2>
 
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              A glimpse of the results achieved by learners at The Howard's Council.
+              A glimpse of the results achieved by learners at The Howards Council.
             </p>
           </div>
 
@@ -285,7 +285,7 @@ function Home() {
               <div className="aspect-[4/3] overflow-hidden">
                 <Photo
                   src={src}
-                  alt={`Student receiving a result at The Howard's Council, photo ${index + 1}`}
+                  alt={`Student receiving a result at The Howards Council, photo ${index + 1}`}
                   className="transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -309,7 +309,7 @@ function Home() {
         <div className="mt-10 divide-y divide-border border-y border-border">
           {[
             [
-              "Which courses does The Howard's Council offer?",
+              "Which courses does The Howards Council offer?",
               "We offer language training and preparation for IELTS, PTE, TOEFL and CELPIP, along with spoken English and foreign language learning.",
             ],
             [
@@ -321,8 +321,8 @@ function Home() {
               "Yes. You can contact our team to discuss your goals and understand which course or preparation path is suitable for you.",
             ],
             [
-              "Where is The Howard's Council located?",
-              "The Howard's Council is based in Meerut. Contact us for the latest centre and course information.",
+              "Where is The Howards Council located?",
+              "The Howards Council is based in Meerut. Contact us for the latest centre and course information.",
             ],
           ].map(([question, answer]) => (
             <details key={question} className="group py-5">
@@ -403,7 +403,7 @@ function Home() {
         <h2 className="font-display text-4xl font-extrabold md:text-5xl">
           Ready to take the next step?
         </h2>
-        <p className="mt-3">Start your language learning journey with The Howard's Council.</p>
+        <p className="mt-3">Start your language learning journey with The Howards Council.</p>
         <a
           href={whatsapp("Hi! I'd like to book a free demo class.")}
           target="_blank"
