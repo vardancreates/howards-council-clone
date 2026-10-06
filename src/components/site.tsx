@@ -220,7 +220,7 @@ export function SiteFooter() {
               <iframe
                 title="The Howards Council location"
                 src="https://www.google.com/maps?q=The+Howard%27s+Council%2C+618%2C+Shiv+Mandir+Lane%2C+Begum+Bagh%2C+Meerut%2C+Uttar+Pradesh+250001&output=embed"
-                className="pointer-events-none h-44 w-full border-0 grayscale transition-transform duration-500 group-hover:scale-105"
+                className="pointer-events-none h-44 w-full border-0 transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             </a>

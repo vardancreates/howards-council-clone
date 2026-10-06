@@ -59,18 +59,18 @@ export const courses = [
     image: photos.ielts,
 
     overview:
-      "IELTS (International English Language Testing System) is an internationally recognised English language proficiency test designed to assess how effectively a candidate can communicate in English. The test evaluates four core skills — Listening, Reading, Writing and Speaking — and is available in different formats depending on the candidate's purpose. IELTS Academic is generally intended for higher education and professional registration, while IELTS General Training focuses more on practical English used in workplace, everyday and social contexts.",
+      "IELTS (International English Language Testing System) is an internationally recognised English language proficiency test designed to assess how effectively a candidate can communicate in English. The test evaluates Listening, Reading, Writing and Speaking. IELTS can be taken on computer, and IELTS (Writing on Paper) also allows test takers to complete the Writing section by hand on paper while taking Listening and Reading on computer. Speaking remains a face-to-face interview with an expert examiner. IELTS is widely used for study, work and migration, depending on the requirements of the relevant organisation or authority.",
 
     audience:
       "For students, professionals and other candidates preparing for IELTS Academic or General Training for study, work, professional registration or migration, depending on the requirements of the relevant institution or authority.",
 
     covered: [
-      "Listening — 30 minutes, 4 sections and 40 questions",
-      "Reading — 60 minutes and 40 questions",
-      "Writing — 60 minutes and 2 tasks",
-      "Speaking — 11–14 minutes across 3 parts",
+      "Listening & Reading — completed on computer",
+      "Writing — choose computer or handwritten on paper",
+      "Speaking — face-to-face interview with an examiner",
       "Academic & General Training test formats",
-      "Question types, assessment criteria and test strategies",
+      "Same IELTS content, scoring and global acceptance across formats",
+      "Test-day strategies and preparation for each section",
     ],
   },
   {

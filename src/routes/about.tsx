@@ -52,6 +52,38 @@ function Page() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
             <div>
+              {/* IELTS / IDP recognition */}
+              <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
+                <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-16">
+                  <div className="shrink-0 lg:w-[34%]">
+                    <Eyebrow>IELTS · IDP</Eyebrow>
+
+                    <h2 className="mt-3 font-display text-3xl font-extrabold md:text-4xl">
+                      An established IELTS registration centre.
+                    </h2>
+                  </div>
+
+                  <div className="min-w-0 flex-1 overflow-hidden rounded-tl-[3rem] border-b-4 border-primary bg-muted p-7 md:p-8">
+                    <div className="flex items-center gap-6">
+                      <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                        <span className="font-display text-xl font-extrabold">IELTS</span>
+                      </div>
+
+                      <div className="min-w-0">
+                        <p className="text-xs font-bold uppercase tracking-[0.16em] text-coral-deep">
+                          Registration centre for IDP IELTS
+                        </p>
+
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+                          A member of the IDP Partnership Programme
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Our vision */}
               <Eyebrow>Our vision</Eyebrow>
               <h2 className="font-display text-4xl font-extrabold md:text-5xl">
                 Helping people find their voice.

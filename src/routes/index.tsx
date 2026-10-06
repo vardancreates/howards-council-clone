@@ -121,6 +121,47 @@ function Home() {
           ))}
         </div>
       </section>
+      {/* IELTS / IDP recognition */}
+      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.4fr] lg:gap-16">
+          <div>
+            <Eyebrow>Recognised by IDP</Eyebrow>
+
+            <h2 className="mt-3 max-w-lg font-display text-3xl font-extrabold md:text-4xl">
+              Trusted for IELTS registration.
+            </h2>
+
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
+              The Howards Council is an IELTS registration centre for IDP IELTS and a member of the
+              IDP Partnership Programme.
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden rounded-tl-[3rem] border-b-4 border-primary bg-muted p-7 md:p-9">
+            <div className="absolute right-0 top-0 h-20 w-20 bg-primary opacity-10" />
+
+            <div className="relative flex items-center gap-6">
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                <span className="font-display text-xl font-extrabold">IELTS</span>
+              </div>
+
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-coral-deep">
+                  Registration centre
+                </p>
+
+                <h3 className="mt-1 font-display text-2xl font-extrabold md:text-3xl">
+                  for IDP IELTS
+                </h3>
+
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Member of the IDP Partnership Programme
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Intro */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
@@ -422,19 +463,22 @@ function Home() {
         <h2 className="font-display text-4xl font-extrabold md:text-5xl">Where it happens.</h2>
 
         <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
-          {classroomPhotos.slice(0, 4).map((photo) => (
-            <Link
-              key={photo.src}
-              to="/gallery"
-              className="group block aspect-[4/5] overflow-hidden"
-            >
-              <Photo
-                src={photo.src}
-                alt={photo.alt}
-                className="transition-transform duration-500 group-hover:scale-105"
-              />
-            </Link>
-          ))}
+          {["classroom-38.webp", "classroom-36.webp", "classroom-39.webp", "classroom-35.webp"]
+            .map((name) => classroomPhotos.find((photo) => photo.src.includes(name)))
+            .filter((photo): photo is (typeof classroomPhotos)[number] => Boolean(photo))
+            .map((photo) => (
+              <Link
+                key={photo.src}
+                to="/gallery"
+                className="group block aspect-[4/5] overflow-hidden"
+              >
+                <Photo
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="transition-transform duration-500 group-hover:scale-105"
+                />
+              </Link>
+            ))}
         </div>
 
         <Link to="/gallery" className="mt-6 inline-block font-bold text-coral-deep">
