@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const WORDS = ["Hello", "Hallo", "Hola", "Bonjour", "नमस्ते"];
+const WORDS = ["Hello", "Hallo", "Hola", "Bonjour", "नमस्ते", "G'day"];
 const STATS = [
   ["23", "Years of language training"],
   ["10", "Language & test programs"],
@@ -65,7 +65,7 @@ function Home() {
             <Eyebrow>LANGUAGE TRAINING · MEERUT</Eyebrow>
 
             <h1 className="font-display text-6xl font-extrabold leading-[0.95] sm:text-7xl lg:text-8xl">
-              Let you <span className="text-primary">speak</span> better.
+              Let's you <span className="text-primary">speak</span> better.
             </h1>
 
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
@@ -74,8 +74,8 @@ function Home() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Action href={whatsapp("Hi! I'd like to book a free demo class.")}>
-                Book a free demo class
+              <Action href={whatsapp("Hi! I'd like to enquire about your courses.")}>
+                Enquire about courses
               </Action>
 
               <Link
@@ -121,6 +121,7 @@ function Home() {
           ))}
         </div>
       </section>
+
       {/* IELTS / IDP recognition */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.4fr] lg:gap-16">
@@ -137,7 +138,12 @@ function Home() {
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-tl-[3rem] border-b-4 border-primary bg-muted p-7 md:p-9">
+          <Link
+            to="/courses/$slug"
+            params={{ slug: "ielts" }}
+            aria-label="Learn more about IELTS preparation"
+            className="group relative block overflow-hidden rounded-tl-[3rem] border-b-4 border-primary bg-muted p-7 transition-shadow hover:shadow-lg md:p-9"
+          >
             <div className="absolute right-0 top-0 h-20 w-20 bg-primary opacity-10" />
 
             <div className="relative flex items-center gap-6">
@@ -159,7 +165,7 @@ function Home() {
                 </p>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
@@ -234,7 +240,7 @@ function Home() {
             </div>
           </div>
           <div>
-            <Eyebrow>Why The Howards</Eyebrow>
+            <Eyebrow>Why The Howards Council</Eyebrow>
             <h2 className="font-display text-4xl font-extrabold md:text-5xl">
               Learn with purpose. Grow with confidence.
             </h2>
@@ -307,7 +313,7 @@ function Home() {
           <div>
             <Eyebrow>Meet your mentor</Eyebrow>
 
-            <h2 className="font-display text-4xl font-extrabold md:text-5xl">Saurabh Sharma</h2>
+            <h2 className="font-display text-5xl font-extrabold md:text-6xl">Saurabh Sharma</h2>
 
             <p className="mt-3 font-display text-xl font-bold text-coral-deep">
               IELTS IDP Certified Trainer · Language Trainer · 23 Years of Experience
@@ -321,7 +327,7 @@ function Home() {
             </p>
 
             <Link to="/about" className="mt-7 inline-flex font-bold text-coral-deep">
-              Meet the team →
+              About us →{" "}
             </Link>
           </div>
         </div>
@@ -416,8 +422,7 @@ function Home() {
         <div className="max-w-2xl">
           <Eyebrow>FAQ</Eyebrow>
 
-          <h2 className="font-display text-4xl font-extrabold md:text-5xl">Questions, answered.</h2>
-
+          <h2 className="font-display text-5xl font-extrabold md:text-6xl">Questions, answered.</h2>
           <p className="mt-4 text-lg text-muted-foreground">
             A few things learners often want to know before getting started.
           </p>
@@ -439,7 +444,7 @@ function Home() {
             ],
             [
               "Where is The Howards Council located?",
-              "The Howards Council is based in Meerut. Contact us for the latest centre and course information.",
+              "Visit us at 618, Near Shiv Mandir, Begum Bagh, Meerut, Uttar Pradesh 250001, India. Contact us if you need directions.",
             ],
           ].map(([question, answer]) => (
             <details key={question} className="group py-5">
@@ -464,7 +469,9 @@ function Home() {
 
         <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
           {["classroom-38.webp", "classroom-36.webp", "classroom-39.webp", "classroom-35.webp"]
-            .map((name) => classroomPhotos.find((photo) => photo.src.includes(name)))
+            .map((name) =>
+              classroomPhotos.find((photo) => photo.src.includes(name.replace(".webp", "-"))),
+            )
             .filter((photo): photo is (typeof classroomPhotos)[number] => Boolean(photo))
             .map((photo) => (
               <Link
@@ -529,7 +536,7 @@ function Home() {
         </h2>
         <p className="mt-3">Start your language learning journey with The Howards Council.</p>
         <a
-          href={whatsapp("Hi! I'd like to book a free demo class.")}
+          href={whatsapp("Hi! I'd like to enquire about your courses.")}
           target="_blank"
           rel="noreferrer"
           className="mt-7 inline-flex h-12 items-center rounded-sm bg-ink px-7 font-bold text-ink-foreground"

@@ -43,10 +43,25 @@ export const mentor = {
   photo: Object.values(mentorFiles)[0] ?? null,
 };
 export const phone = "+919997756675";
-export const phoneLabel = "099977 56675";
+export const phoneLabel = "+91 99977 56675";
 export const whatsapp = (message: string) =>
   `https://wa.me/919997756675?text=${encodeURIComponent(message)}`;
-export const courses = [
+type RoadmapStep = {
+  title: string;
+  description: string;
+};
+type Course = {
+  slug: string;
+  name: string;
+  category: string;
+  tagline: string;
+  image: string;
+  overview: string;
+  audience: string;
+  covered: string[];
+  roadmap?: RoadmapStep[];
+};
+export const courses: Course[] = [
   {
     slug: "ielts",
 
@@ -70,9 +85,32 @@ export const courses = [
       "Speaking — face-to-face interview with an examiner",
       "Academic & General Training test formats",
       "Same IELTS content, scoring and global acceptance across formats",
+
       "Test-day strategies and preparation for each section",
     ],
+
+    roadmap: [
+      {
+        title: "Understand the test",
+        description:
+          "Learn the four IELTS skills, the test format and the requirements of your chosen test type.",
+      },
+      {
+        title: "Build core skills",
+        description: "Work on Listening, Reading, Writing and Speaking through focused practice.",
+      },
+      {
+        title: "Practise question types",
+        description:
+          "Become familiar with common task formats and develop clear response strategies.",
+      },
+      {
+        title: "Review and improve",
+        description: "Use practice and feedback to identify areas for improvement before test day.",
+      },
+    ],
   },
+
   {
     slug: "pte",
 
@@ -126,32 +164,6 @@ export const courses = [
     ],
   },
   {
-    slug: "celpip",
-
-    name: "CELPIP",
-
-    category: "Test preparation",
-
-    tagline: "Build practical English for real-world communication.",
-
-    image: photos.celpip,
-
-    overview:
-      "CELPIP (Canadian English Language Proficiency Index Program) is a computer-delivered English language proficiency test that assesses Listening, Reading, Writing and Speaking. The CELPIP-General Test is designed around English used in everyday social, educational and workplace situations and is completed in a single test sitting. The test measures all four language skills through practical, real-life communication tasks and is used for purposes including Canadian immigration, professional designation and admission to certain educational programs, depending on the requirements of the relevant organisation or authority.",
-
-    audience:
-      "For candidates preparing to demonstrate English proficiency for Canadian immigration, professional purposes or educational opportunities where CELPIP scores are accepted.",
-
-    covered: [
-      "Listening — 46–55 minutes across 6 sections",
-      "Reading — 43–56 minutes across 4 sections",
-      "Writing — 53 minutes across 2 tasks",
-      "Speaking — 15 minutes across 8 tasks",
-      "Computer-delivered test format and timing",
-      "Real-life communication tasks and test strategies",
-    ],
-  },
-  {
     slug: "spoken-english",
 
     name: "Spoken English",
@@ -175,6 +187,32 @@ export const courses = [
       "Pronunciation, clarity and natural expression",
       "Conversation, interaction and practical communication",
       "Progressive development from foundational to advanced levels",
+    ],
+  },
+  {
+    slug: "celpip",
+
+    name: "CELPIP",
+
+    category: "Test preparation",
+
+    tagline: "Build practical English for real-world communication.",
+
+    image: photos.celpip,
+
+    overview:
+      "CELPIP (Canadian English Language Proficiency Index Program) is a computer-delivered English language proficiency test that assesses Listening, Reading, Writing and Speaking. The CELPIP-General Test is designed around English used in everyday social, educational and workplace situations and is completed in a single test sitting. The test measures all four language skills through practical, real-life communication tasks and is used for purposes including Canadian immigration, professional designation and admission to certain educational programs, depending on the requirements of the relevant organisation or authority.",
+
+    audience:
+      "For candidates preparing to demonstrate English proficiency for Canadian immigration, professional purposes or educational opportunities where CELPIP scores are accepted.",
+
+    covered: [
+      "Listening — 46–55 minutes across 6 sections",
+      "Reading — 43–56 minutes across 4 sections",
+      "Writing — 53 minutes across 2 tasks",
+      "Speaking — 15 minutes across 8 tasks",
+      "Computer-delivered test format and timing",
+      "Real-life communication tasks and test strategies",
     ],
   },
   {
@@ -309,7 +347,7 @@ export const courses = [
   },
 ] as const;
 
-export const address = "618, Shiv Mandir Lane, Begum Bagh, Meerut, Uttar Pradesh 250001";
+export const address = "618, Near Shiv Mandir, Begum Bagh, Meerut, Uttar Pradesh 250001, India";
 const place = encodeURIComponent(`The Howards Council ${address}`);
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${place}`;
 export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place}`;

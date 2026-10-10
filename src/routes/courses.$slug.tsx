@@ -66,6 +66,22 @@ function CoursePage() {
           </ul>
         </div>
       </section>
+      {(c.roadmap?.length ?? 0) > 0 && (
+        <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <Eyebrow>Learning roadmap</Eyebrow>
+          <h2 className="font-display text-4xl font-extrabold">Your path to progress.</h2>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {(c.roadmap ?? []).map((step, index) => (
+              <div key={step.title} className="border-t-2 border-primary pt-5">
+                <p className="text-sm font-bold text-coral-deep">STEP {index + 1}</p>
+                <h3 className="mt-3 text-xl font-bold">{step.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
       <section className="bg-ink px-5 py-16 text-ink-foreground">
         <div className="mx-auto max-w-7xl lg:px-8">
           <Eyebrow>Start learning</Eyebrow>
@@ -89,9 +105,12 @@ function CoursePage() {
         <h2 className="font-display text-4xl font-extrabold">Good to know before you start.</h2>
         <div className="mt-8 divide-y border-y">
           <details className="py-5">
-            <summary className="cursor-pointer font-bold">Is a demo class available?</summary>
+            <summary className="cursor-pointer font-bold">
+              How can I enquire about a course?
+            </summary>
             <p className="mt-3 text-muted-foreground">
-              Contact us to check current demo class availability and book a session.
+              Contact us on WhatsApp or through the contact page to enquire about the course you are
+              interested in.
             </p>
           </details>
           <details className="py-5">

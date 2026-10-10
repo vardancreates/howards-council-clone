@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import logoImg from "@/assets/logo.png";
 const logo = { url: logoImg };
 import { courses, mentor, phone, whatsapp } from "@/lib/site-data";
+import socialPreview from "@/assets/social-preview/howards-social-preview.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -49,6 +50,7 @@ export const makeHead = (title: string, description: string) => ({
     { property: "og:title", content: `${title} | The Howards Council` },
     { property: "og:description", content: description },
     { property: "og:type", content: "website" },
+    { property: "og:image", content: socialPreview },
     { name: "twitter:card", content: "summary_large_image" },
   ],
 });
@@ -112,8 +114,8 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <Action href={whatsapp("Hi! I'd like to book a free demo class.")}>
-            Book Free Demo <ArrowRight size={16} />
+          <Action href={whatsapp("Hi! I'd like to enquire about your courses.")}>
+            Enquire About Courses <ArrowRight size={16} />
           </Action>
         </div>
         <Button
@@ -161,8 +163,8 @@ export function SiteHeader() {
             </Link>
           ))}
           <div className="py-3">
-            <Action href={whatsapp("Hi! I'd like to book a free demo class.")}>
-              Book Free Demo
+            <Action href={whatsapp("Hi! I'd like to enquire about your courses.")}>
+              Enquire About Courses
             </Action>
           </div>
         </nav>
