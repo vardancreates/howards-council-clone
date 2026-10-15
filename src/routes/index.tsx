@@ -1,12 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { SiteLayout, Photo, MentorPhoto, Eyebrow, Action, makeHead } from "@/components/site";
+import {
+  SiteLayout,
+  Photo,
+  MentorPhoto,
+  Eyebrow,
+  Action,
+  makeHead,
+  AssessmentBanner,
+} from "@/components/site";
 import { classroomPhotos, courses, whatsapp } from "@/lib/site-data";
-import result1 from "@/assets/results/result-1.jpg";
-import result2 from "@/assets/results/result-2.jpg";
-import result3 from "@/assets/results/result-3.jpg";
 import learnWithPurpose from "@/assets/photos/learn-with-purpose.webp";
 import heroBackground from "@/assets/photos/howards-hero-bg.webp";
+import { ScoreGuide } from "@/components/score-guide";
+
+import idpLogo from "@/assets/idp-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -23,10 +31,11 @@ const STATS = [
   ["10", "Language & test programs"],
   ["4", "Core language skills"],
 ];
+
 const WHY = [
   [
-    "Experienced training",
-    "Learn with a practical approach built around language skills and confidence.",
+    "Expert-led training",
+    "Learn through structured lessons, practical exercises and guidance tailored to your language-learning goals.",
   ],
   ["23 years in Meerut", "More than two decades of language training and student guidance."],
   [
@@ -65,12 +74,12 @@ function Home() {
             <Eyebrow>LANGUAGE TRAINING · MEERUT</Eyebrow>
 
             <h1 className="font-display text-6xl font-extrabold leading-[0.95] sm:text-7xl lg:text-8xl">
-              Let's you <span className="text-primary">speak</span> better.
+              Lets you <span className="text-primary">speak</span> better.
             </h1>
 
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-              IELTS, PTE, TOEFL and CELPIP coaching, spoken English and foreign languages — built
-              around practical learning, confidence and real results.
+              Spoken English, IELTS, PTE, TOEFL and CELPIP coaching, along with Foreign languages —
+              built around practical learning, confidence and real results.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -142,28 +151,25 @@ function Home() {
             to="/courses/$slug"
             params={{ slug: "ielts" }}
             aria-label="Learn more about IELTS preparation"
-            className="group relative block overflow-hidden rounded-tl-[3rem] border-b-4 border-primary bg-muted p-7 transition-shadow hover:shadow-lg md:p-9"
+            className="group grid overflow-hidden rounded-tl-[3rem] border-b-4 border-primary bg-muted transition-shadow hover:shadow-lg md:grid-cols-[1fr_15rem]"
           >
-            <div className="absolute right-0 top-0 h-20 w-20 bg-primary opacity-10" />
+            <div className="flex items-center justify-center bg-white p-6 md:order-2">
+              <img src={idpLogo} alt="IDP IELTS logo" className="h-auto w-44 object-contain" />
+            </div>
 
-            <div className="relative flex items-center gap-6">
-              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <span className="font-display text-xl font-extrabold">IELTS</span>
-              </div>
-
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-coral-deep">
-                  Registration centre
-                </p>
-
-                <h3 className="mt-1 font-display text-2xl font-extrabold md:text-3xl">
-                  for IDP IELTS
-                </h3>
-
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Member of the IDP Partnership Programme
-                </p>
-              </div>
+            <div className="p-7 md:order-1 md:p-10">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-coral-deep">
+                Registration centre
+              </p>
+              <h3 className="mt-1 font-display text-2xl font-extrabold md:text-3xl">
+                for IDP IELTS
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Member of the IDP Partnership Programme
+              </p>
+              <span className="mt-5 inline-block text-sm font-bold text-coral-deep">
+                Explore IELTS preparation →
+              </span>
             </div>
           </Link>
         </div>
@@ -205,13 +211,14 @@ function Home() {
               params={{ slug: c.slug }}
               className="group block bg-card"
             >
-              <div className="aspect-[4/3] overflow-hidden rounded-tl-[3rem]">
+              <div className="group relative aspect-[4/3] overflow-hidden rounded-tl-[3rem]">
                 <Photo
                   src={c.image}
                   alt={c.name}
-                  className="transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
+
               <div className="border-b-4 border-primary p-5">
                 <p className="text-xs font-bold uppercase tracking-widest text-coral-deep">
                   {c.category}
@@ -226,6 +233,7 @@ function Home() {
           View all courses →
         </Link>
       </section>
+      <ScoreGuide compact />
 
       {/* Why us */}
       <section className="bg-muted px-5 py-20">
@@ -363,12 +371,12 @@ function Home() {
             {
               name: "Mukul Goswami",
               review:
-                "I enrolled for IELTS Coaching at Howard's Council and got an 8 Bands score. The learning was very detailed and Saurabh sir guided me through every single step of the process, which led me to this amazing score. Definitely recommended, amazing teaching not only for english but many other languages too.",
+                "I enrolled for IELTS Coaching at Howards Council and got an 8 Bands score. The learning was very detailed and Saurabh sir guided me through every single step of the process, which led me to this amazing score. Definitely recommended, amazing teaching not only for english but many other languages too.",
             },
             {
               name: "Anubhav Sonkar",
               review:
-                "THE HOWARD'S COUNCIL provides exceptional guidance for IELTS and a wide range of other courses in a highly supportive and motivating environment. With their expert faculty, personalized attention, and result-oriented approach, I was able to achieve an overall band score of 7. I am truly grateful for their continuous support and dedication throughout my preparation journey.",
+                "THE HOWARDS COUNCIL provides exceptional guidance for IELTS and a wide range of other courses in a highly supportive and motivating environment. With their expert faculty, personalized attention, and result-oriented approach, I was able to achieve an overall band score of 7. I am truly grateful for their continuous support and dedication throughout my preparation journey.",
             },
             {
               name: "Fardeen Khan",
@@ -378,7 +386,7 @@ function Home() {
             {
               name: "Saloni Rani",
               review:
-                "Learning under Saurabh Sir at The Howard's Council has been truly transformational. He is extremely dedicated, knowledgeable, and supportive. His way of teaching builds confidence and makes even difficult topics easy to understand. The institute also offers foreign language courses like Spanish, German, and French.",
+                "Learning under Saurabh Sir at The Howards Council has been truly transformational. He is extremely dedicated, knowledgeable, and supportive. His way of teaching builds confidence and makes even difficult topics easy to understand. The institute also offers foreign language courses like Spanish, German, and French.",
             },
             {
               name: "Manish Sharma",
@@ -388,7 +396,7 @@ function Home() {
             {
               name: "Vaishali Tomar",
               review:
-                "The teachers at THE HOWARD'S COUNCIL are incredibly patient, friendly, and make learning truly enjoyable. Their innovative teaching methods kept me engaged throughout the course. I've learned a wide range of English skills here, and I can confidently say that my fluency, personality, and confidence have improved significantly.",
+                "The teachers at THE HOWARDS COUNCIL are incredibly patient, friendly, and make learning truly enjoyable. Their innovative teaching methods kept me engaged throughout the course. I've learned a wide range of English skills here, and I can confidently say that my fluency, personality, and confidence have improved significantly.",
             },
           ].map((review) => (
             <article
@@ -432,7 +440,7 @@ function Home() {
           {[
             [
               "Which courses does The Howards Council offer?",
-              "We offer language training and preparation for IELTS, PTE, TOEFL and CELPIP, along with spoken English and foreign language learning.",
+              "We offer language training and preparation for IELTS, PTE, TOEFL and CELPIP, along with Spoken English and Foreign Language learning.",
             ],
             [
               "Do I need prior English knowledge to join?",
@@ -468,7 +476,7 @@ function Home() {
         <h2 className="font-display text-4xl font-extrabold md:text-5xl">Where it happens.</h2>
 
         <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
-          {["classroom-38.webp", "classroom-36.webp", "classroom-39.webp", "classroom-35.webp"]
+          {["classroom-47.webp", "classroom-38.webp", "classroom-36.webp", "classroom-35.webp"]
             .map((name) =>
               classroomPhotos.find((photo) => photo.src.includes(name.replace(".webp", "-"))),
             )
@@ -492,7 +500,7 @@ function Home() {
           See the gallery →
         </Link>
       </section>
-
+      <AssessmentBanner />
       {/* Enquiry */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <div className="grid gap-10 bg-muted p-8 md:p-12 lg:grid-cols-2 lg:items-center">

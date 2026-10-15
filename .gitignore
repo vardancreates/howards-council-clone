@@ -30,3 +30,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# local scratch and design sources
+*.zip
+*.cdr
+*.cdr/
+howards-working-changes.patch
+backup-untracked/
+css-test.txt
+worker-css-test.txt
+worker-home.html

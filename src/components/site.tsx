@@ -10,6 +10,7 @@ import socialPreview from "@/assets/social-preview/howards-social-preview.png";
 const nav = [
   { to: "/", label: "Home" },
   { to: "/results", label: "Results" },
+  { to: "/level-test", label: "Free Assessment" },
   { to: "/gallery", label: "Gallery" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
@@ -50,7 +51,17 @@ export const makeHead = (title: string, description: string) => ({
     { property: "og:title", content: `${title} | The Howards Council` },
     { property: "og:description", content: description },
     { property: "og:type", content: "website" },
-    { property: "og:image", content: socialPreview },
+    { property: "og:site_name", content: "The Howard’s Council" },
+
+    {
+      name: "twitter:image",
+      content: socialPreview,
+    },
+    {
+      property: "og:image",
+      content: socialPreview,
+    },
+
     { name: "twitter:card", content: "summary_large_image" },
   ],
 });
@@ -179,6 +190,7 @@ export function SiteFooter() {
   return (
     <>
       <footer className="bg-ink px-5 py-14 text-ink-foreground">
+        {" "}
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3">
           <div>
             <img
@@ -193,7 +205,7 @@ export function SiteFooter() {
             <h3 className="mt-7 font-display text-lg font-bold">Contact</h3>
 
             <a href={`tel:${phone}`} className="mt-3 inline-block text-lg font-bold text-secondary">
-              099977 56675
+              +91 99977 56675
             </a>
           </div>
 
@@ -228,9 +240,9 @@ export function SiteFooter() {
             </a>
 
             <p className="mt-4 text-sm text-ink-foreground/70">
-              618, Shiv Mandir Lane, Begum Bagh,
+              618, Near Shiv Mandir, Begum Bagh,
               <br />
-              Meerut, Uttar Pradesh 250001
+              Meerut, Uttar Pradesh 250001 (INDIA)
             </p>
 
             <a
@@ -243,9 +255,13 @@ export function SiteFooter() {
             </a>
           </div>
         </div>
-
         <div className="mx-auto mt-12 flex max-w-7xl flex-wrap justify-between gap-2 border-t border-ink-foreground/20 pt-6 text-xs text-ink-foreground/60">
-          <span>© {new Date().getFullYear()} The Howards Council</span>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span>© {new Date().getFullYear()} The Howards Council. All rights reserved.</span>
+            <Link to="/privacy-policy" className="transition-colors hover:text-secondary">
+              Privacy Policy
+            </Link>
+          </div>{" "}
           <a
             href="https://vebstudio.netlify.app/"
             target="_blank"
@@ -339,5 +355,30 @@ export function MentorPhoto() {
     <div className="grid h-full w-full place-items-center bg-muted font-display text-8xl font-extrabold text-coral-deep">
       SS
     </div>
+  );
+}
+export function AssessmentBanner() {
+  return (
+    <section className="bg-ink px-5 py-14 text-ink-foreground">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">
+            Free language assessment
+          </p>
+          <h2 className="mt-2 max-w-2xl font-display text-3xl font-extrabold md:text-5xl">
+            Not sure where you stand? Find your level, free.
+          </h2>
+          <p className="mt-3 max-w-xl text-ink-foreground/80">
+            Take a 3-minute online check, then visit our centre for your free assessment.
+          </p>
+        </div>
+        <Link
+          to="/level-test"
+          className="inline-flex h-12 shrink-0 items-center justify-center rounded-sm bg-secondary px-7 font-bold text-secondary-foreground hover:opacity-90"
+        >
+          Check my level →
+        </Link>
+      </div>
+    </section>
   );
 }

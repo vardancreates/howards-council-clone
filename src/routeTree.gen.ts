@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as LevelTestRouteImport } from './routes/level-test'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as CoursesIndexRouteImport } from './routes/courses.index'
@@ -36,6 +37,11 @@ const ContactRoute = ContactRouteImport.update({
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LevelTestRoute = LevelTestRouteImport.update({
+  id: '/level-test',
+  path: '/level-test',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/level-test': typeof LevelTestRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/results': typeof ResultsRoute
   '/courses/$slug': typeof CoursesSlugRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/level-test': typeof LevelTestRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/results': typeof ResultsRoute
   '/courses/$slug': typeof CoursesSlugRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/level-test': typeof LevelTestRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/results': typeof ResultsRoute
   '/courses/$slug': typeof CoursesSlugRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/gallery'
+    | '/level-test'
     | '/privacy-policy'
     | '/results'
     | '/courses/$slug'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/gallery'
+    | '/level-test'
     | '/privacy-policy'
     | '/results'
     | '/courses/$slug'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/gallery'
+    | '/level-test'
     | '/privacy-policy'
     | '/results'
     | '/courses/$slug'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
+  LevelTestRoute: typeof LevelTestRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ResultsRoute: typeof ResultsRoute
   CoursesSlugRoute: typeof CoursesSlugRoute
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       path: '/gallery'
       fullPath: '/gallery'
       preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/level-test': {
+      id: '/level-test'
+      path: '/level-test'
+      fullPath: '/level-test'
+      preLoaderRoute: typeof LevelTestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
+  LevelTestRoute: LevelTestRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ResultsRoute: ResultsRoute,
   CoursesSlugRoute: CoursesSlugRoute,

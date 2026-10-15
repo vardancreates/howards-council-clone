@@ -46,9 +46,9 @@ function Page() {
           </a>
           <div className="mt-6">
             <p className="text-lg font-bold">
-              618, Shiv Mandir Lane, Begum Bagh,
+              618, Near Shiv Mandir, Begum Bagh,
               <br />
-              Meerut, Uttar Pradesh 250001
+              Meerut, Uttar Pradesh 250001 (INDIA)
             </p>
 
             <a

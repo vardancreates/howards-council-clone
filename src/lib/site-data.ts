@@ -8,6 +8,7 @@ import german from "@/assets/photos/german.jpg";
 import spanish from "@/assets/photos/spanish.jpg";
 import french from "@/assets/photos/french.jpg";
 import personalityDevelopment from "@/assets/photos/personality-development.jpg";
+import interviewPreparation from "@/assets/photos/interview-preparation.jpg";
 
 export const photos = {
   ielts: ielts,
@@ -20,18 +21,40 @@ export const photos = {
   spanish: spanish,
   french: french,
   personalityDevelopment: personalityDevelopment,
+  interviewPreparation: interviewPreparation,
 };
+
 const classroomFiles = import.meta.glob("/src/assets/classroom/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
 }) as Record<string, string>;
-export const classroomPhotos = Object.entries(classroomFiles)
-  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
-  .map(([, src], i) => ({
-    src,
-    alt: `Classroom training at The Howards Council, photo ${i + 1}`,
-  }));
+
+// Put the filenames you want to show first here.
+// Keep the filenames exactly as they appear in the folder.
+const priorityPhotos = ["classroom-01.webp", "classroom-20.webp", "classroom-04.webp"];
+
+const sortedClassroomFiles = Object.entries(classroomFiles).sort(([a], [b]) =>
+  a.localeCompare(b, undefined, { numeric: true }),
+);
+
+const priorityPaths = priorityPhotos.map((filename) => `/src/assets/classroom/${filename}`);
+
+export const classroomPhotos = [
+  ...priorityPaths
+    .filter((path) => path in classroomFiles)
+    .map((path) => ({
+      src: classroomFiles[path]!,
+      alt: `Classroom training at The Howards Council`,
+    })),
+
+  ...sortedClassroomFiles
+    .filter(([path]) => !priorityPaths.includes(path))
+    .map(([, src]) => ({
+      src,
+      alt: `Classroom training at The Howards Council`,
+    })),
+];
 
 const mentorFiles = import.meta.glob("/src/assets/mentor/*.{jpg,jpeg,png,webp}", {
   eager: true,
@@ -320,6 +343,24 @@ export const courses: Course[] = [
     ],
   },
   {
+    slug: "interview-preparation",
+    name: "Interview Preparation & Career Skills",
+    category: "English & communication",
+    tagline: "Prepare confidently. Present yourself professionally.",
+    image: photos.interviewPreparation,
+    overview:
+      "Develop the communication and presentation skills needed to approach interviews with greater confidence. Focus areas can include self-introduction, answering interview questions, professional communication and mock interview practice.",
+    audience:
+      "For students, job seekers and professionals who want to strengthen their interview communication and professional presentation.",
+    covered: [
+      "Self-introduction and personal presentation",
+      "Common interview questions and structured answers",
+      "Professional communication and speaking confidence",
+      "Body language and interview etiquette",
+      "Mock interview practice",
+    ],
+  },
+  {
     slug: "personality-development",
 
     name: "Personality Development",
@@ -347,7 +388,7 @@ export const courses: Course[] = [
   },
 ] as const;
 
-export const address = "618, Near Shiv Mandir, Begum Bagh, Meerut, Uttar Pradesh 250001, India";
+export const address = "618, Near Shiv Mandir, Begum Bagh, Meerut, Uttar Pradesh 250001, (India)";
 const place = encodeURIComponent(`The Howards Council ${address}`);
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${place}`;
 export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place}`;

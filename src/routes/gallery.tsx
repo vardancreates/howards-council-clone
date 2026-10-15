@@ -27,23 +27,46 @@ function GalleryPage() {
   }, [i]);
   return (
     <SiteLayout>
-      <section className="mx-auto max-w-7xl columns-1 gap-5 px-5 py-12 pb-24 sm:columns-2 lg:columns-3 lg:px-8">
-        {PHOTOS.map((p, n) => (
-          <button
-            key={p.src + n}
-            onClick={() => setI(n)}
-            aria-label={`Open photo: ${p.alt}`}
-            className="mb-4 block w-full break-inside-avoid overflow-hidden"
-          >
-            <img
-              src={p.src}
-              alt={p.alt}
-              loading="lazy"
-              className="w-full transition-transform duration-500 hover:scale-105"
-            />
-          </button>
-        ))}
+      <section className="mx-auto max-w-7xl px-5 py-12 pb-24 lg:px-8">
+        {/* First row: the three priority images */}
+        <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {PHOTOS.slice(0, 3).map((p, n) => (
+            <button
+              key={p.src}
+              onClick={() => setI(n)}
+              aria-label={`Open photo: ${p.alt}`}
+              className="block w-full self-start overflow-hidden rounded-2xl border border-border/70 bg-white p-1 shadow-sm transition-shadow duration-300 hover:shadow-lg"
+            >
+              <img
+                src={p.src}
+                alt={p.alt}
+                loading="lazy"
+                className="block w-full rounded-xl transition-transform duration-500 hover:scale-[1.02]"
+              />
+            </button>
+          ))}
+        </div>
+
+        {/* Remaining images: masonry columns */}
+        <div className="mt-5 columns-1 gap-5 sm:columns-2 lg:columns-3">
+          {PHOTOS.slice(3).map((p, index) => (
+            <button
+              key={p.src}
+              onClick={() => setI(index + 3)}
+              aria-label={`Open photo: ${p.alt}`}
+              className="mb-5 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-border/70 bg-white p-1 shadow-sm transition-shadow duration-300 hover:shadow-lg"
+            >
+              <img
+                src={p.src}
+                alt={p.alt}
+                loading="lazy"
+                className="block w-full rounded-xl transition-transform duration-500 hover:scale-[1.02]"
+              />
+            </button>
+          ))}
+        </div>
       </section>
+
       {i !== null && (
         <div
           role="dialog"

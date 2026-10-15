@@ -57,6 +57,42 @@ function PrivacyPolicyPage() {
           </section>
 
           <section>
+            <h2 className="font-display text-3xl font-extrabold">
+              Student results and photographs
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              This website may display student achievements, examination results, photographs and
+              testimonials to present the educational activities and achievements of The Howards
+              Council. Where such material identifies an individual, it should be published only
+              where the institute has an appropriate lawful basis and any required permission or
+              consent.
+            </p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              If you believe that your personal information or an identifiable image has been
+              published incorrectly or without appropriate permission, please contact The Howards
+              Council using the contact details provided on this website. Requests will be reviewed
+              in accordance with applicable law.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-3xl font-extrabold">
+              Copyright and use of website images
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Website text, branding, photographs, student result images and other materials may be
+              protected by copyright or other applicable rights. Content owned by or licensed to The
+              Howards Council must not be reproduced, republished, distributed or used commercially
+              without the appropriate permission, except as permitted by applicable law.
+            </p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Third-party images and materials remain the property of their respective rights
+              holders. If you wish to reuse any material, please obtain permission from the relevant
+              rights holder before doing so.
+            </p>
+          </section>
+
+          <section>
             <h2 className="font-display text-3xl font-extrabold">Contact</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               If you have questions about this Privacy Policy or how your information is handled,

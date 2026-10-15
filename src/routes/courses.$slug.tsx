@@ -1,6 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { courses, whatsapp } from "@/lib/site-data";
-import { SiteLayout, Photo, Eyebrow, Action, makeHead } from "@/components/site";
+import { SiteLayout, Photo, Eyebrow, Action, makeHead, AssessmentBanner } from "@/components/site";
+import { courseDetails } from "@/lib/course-details";
+import {
+  CourseFacts,
+  CourseDetailSections,
+  CourseSteps,
+  DetailFaq,
+} from "@/components/course-details";
 export const Route = createFileRoute("/courses/$slug")({
   loader: ({ params }) => {
     const course = courses.find((c) => c.slug === params.slug);
@@ -18,6 +25,7 @@ export const Route = createFileRoute("/courses/$slug")({
 });
 function CoursePage() {
   const c = Route.useLoaderData();
+  const d = courseDetails[c.slug];
   return (
     <SiteLayout>
       <section className="bg-muted">
@@ -46,6 +54,7 @@ function CoursePage() {
           </div>
         </div>
       </section>
+      {d && <CourseFacts d={d} />}
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8">
         <div>
           <Eyebrow>About this course</Eyebrow>
@@ -66,7 +75,9 @@ function CoursePage() {
           </ul>
         </div>
       </section>
-      {(c.roadmap?.length ?? 0) > 0 && (
+      {d && <CourseDetailSections d={d} />}
+      {d && <CourseSteps steps={d.steps} />}
+      {!d && (c.roadmap?.length ?? 0) > 0 && (
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <Eyebrow>Learning roadmap</Eyebrow>
           <h2 className="font-display text-4xl font-extrabold">Your path to progress.</h2>
@@ -104,6 +115,7 @@ function CoursePage() {
         <Eyebrow>Questions</Eyebrow>
         <h2 className="font-display text-4xl font-extrabold">Good to know before you start.</h2>
         <div className="mt-8 divide-y border-y">
+          {d && <DetailFaq items={d.faq} />}
           <details className="py-5">
             <summary className="cursor-pointer font-bold">
               How can I enquire about a course?
@@ -138,6 +150,7 @@ function CoursePage() {
           </Action>
         </div>
       </section>
+      <AssessmentBanner />
     </SiteLayout>
   );
 }
