@@ -19,8 +19,8 @@ import idpLogo from "@/assets/idp-logo.png";
 export const Route = createFileRoute("/")({
   head: () =>
     makeHead(
-      "IELTS, PTE & English Language Training in Meerut",
-      "IELTS, PTE, TOEFL, CELPIP, spoken English and foreign language training in Meerut.",
+      "Spoken English, IELTS & PTE Coaching in Meerut | The Howards Council",
+      "Build stronger communication skills with Spoken English and prepare for IELTS, PTE, TOEFL at The Howards Council in Meerut. Explore language courses.",
       "/",
     ),
   component: Home,
