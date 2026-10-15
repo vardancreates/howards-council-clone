@@ -2,11 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, SectionIntro, MentorPhoto, Eyebrow, makeHead } from "@/components/site";
 import { photos } from "@/lib/site-data";
 export const Route = createFileRoute("/about")({
-  head: () =>
-    makeHead(
-      "About The Howards Council",
-      "Learn about The Howards Council, a language training institute in Meerut since 2003.",
-    ),
+  head: () => makeHead("About Us", "Learn about The Howards Council.", "/about"),
   component: Page,
 });
 function Page() {

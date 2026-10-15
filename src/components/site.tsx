@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import logoImg from "@/assets/logo.png";
 const logo = { url: logoImg };
 import { courses, mentor, phone, whatsapp } from "@/lib/site-data";
-import socialPreview from "@/assets/social-preview/howards-social-preview.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -43,28 +42,33 @@ export function Action({
   );
 }
 
-export const makeHead = (title: string, description: string) => ({
-  meta: [
-    { title: `${title} | The Howards Council` },
-    { name: "description", content: description },
-    { name: "robots", content: "index, follow" },
-    { property: "og:title", content: `${title} | The Howards Council` },
-    { property: "og:description", content: description },
-    { property: "og:type", content: "website" },
-    { property: "og:site_name", content: "The Howard’s Council" },
+const SITE_URL = "https://howards.in";
+const SOCIAL_IMAGE = `${SITE_URL}/howards-social-preview.jpg`;
 
-    {
-      name: "twitter:image",
-      content: socialPreview,
-    },
-    {
-      property: "og:image",
-      content: socialPreview,
-    },
+export const makeHead = (title: string, description: string, path?: string) => {
+  const fullTitle = `${title} | The Howards Council`;
+  const url = path !== undefined ? `${SITE_URL}${path}` : undefined;
 
-    { name: "twitter:card", content: "summary_large_image" },
-  ],
-});
+  return {
+    meta: [
+      { title: fullTitle },
+      { name: "description", content: description },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: fullTitle },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "The Howard’s Council" },
+      ...(url ? [{ property: "og:url", content: url }] : []),
+      { property: "og:image", content: SOCIAL_IMAGE },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:image", content: SOCIAL_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: url ? [{ rel: "canonical", href: url }] : [],
+  };
+};
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (

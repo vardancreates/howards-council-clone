@@ -7,6 +7,7 @@ export const Route = createFileRoute("/courses/")({
     makeHead(
       "English & Language Courses in Meerut",
       "Explore IELTS, PTE, TOEFL, CELPIP, Spoken English, Business English, German, Spanish, French and Personality Development courses in Meerut.",
+      "/courses",
     ),
   component: CoursesPage,
 });

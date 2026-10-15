@@ -8,6 +8,7 @@ export const Route = createFileRoute("/gallery")({
     makeHead(
       "Language Training Gallery in Meerut",
       "Explore classroom training and learning moments from The Howards Council in Meerut.",
+      "/gallery",
     ),
   component: GalleryPage,
 });

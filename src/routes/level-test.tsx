@@ -10,6 +10,7 @@ export const Route = createFileRoute("/level-test")({
     makeHead(
       "Free Language Assessment",
       "Take a quick English level check online, then book your free language assessment at The Howards Council in Meerut.",
+      "/level-test",
     ),
   component: LevelTestPage,
 });

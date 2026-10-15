@@ -21,6 +21,7 @@ export const Route = createFileRoute("/")({
     makeHead(
       "IELTS, PTE & English Language Training in Meerut",
       "IELTS, PTE, TOEFL, CELPIP, spoken English and foreign language training in Meerut.",
+      "/",
     ),
   component: Home,
 });

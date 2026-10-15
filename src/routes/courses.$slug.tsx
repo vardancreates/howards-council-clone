@@ -20,6 +20,7 @@ export const Route = createFileRoute("/courses/$slug")({
       loaderData
         ? `${loaderData.name} classes in Meerut. ${loaderData.overview}`
         : "Explore courses at The Howards Council.",
+      loaderData ? `/courses/${loaderData.slug}` : undefined,
     ),
   component: CoursePage,
 });

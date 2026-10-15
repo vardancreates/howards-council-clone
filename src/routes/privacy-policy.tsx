@@ -6,6 +6,7 @@ export const Route = createFileRoute("/privacy-policy")({
     makeHead(
       "Privacy Policy",
       "Privacy Policy for The Howards Council, a language training institute in Meerut.",
+      "/privacy-policy",
     ),
   component: PrivacyPolicyPage,
 });

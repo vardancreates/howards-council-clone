@@ -23,6 +23,7 @@ export const Route = createFileRoute("/results")({
     makeHead(
       "Student Results from The Howards Council",
       "View student result highlights from The Howards Council, a language training institute in Meerut.",
+      "/results",
     ),
   component: ResultsPage,
 });

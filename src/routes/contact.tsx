@@ -8,6 +8,7 @@ export const Route = createFileRoute("/contact")({
     makeHead(
       "Contact The Howards Council in Meerut",
       "Contact The Howards Council in Begum Bagh, Meerut to enquire about language courses, English training and test preparation.",
+      "/contact",
     ),
   component: Page,
 });
